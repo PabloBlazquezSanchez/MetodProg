@@ -10,6 +10,7 @@ public class Main {
 
 	}
 
+	
 	// Método que captura el dato introducido por teclado y comprueba si es un
 	// número o un caracter
 	/**
