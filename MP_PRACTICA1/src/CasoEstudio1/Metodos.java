@@ -1,6 +1,6 @@
 package CasoEstudio1;
 
-public class Dominio_uno {
+public class Metodos {
 	
 	public static int HexF (int n){
 		return ((2*n-1)*n);
