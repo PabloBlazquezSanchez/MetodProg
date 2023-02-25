@@ -34,7 +34,7 @@ public class Main {
 				numero = lectura.nextInt();
 
 				if (numero <= 0) {
-					System.out.println("Error. Introduce números mayores que 0.");
+					System.out.println("Error. Introduce números mayores que 0:");
 					comprobacion = true;
 				}
 			} while (comprobacion);
