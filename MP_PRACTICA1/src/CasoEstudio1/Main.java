@@ -10,9 +10,6 @@ public class Main {
 
 	}
 
-	
-	// Método que captura el dato introducido por teclado y comprueba si es un
-	// número o un caracter
 	/**
 	 * 
 	 * Este método captura el dato introducido por teclado y analiza si se ha
@@ -26,12 +23,22 @@ public class Main {
 	 *
 	 * @return numero El número escrito por el usuario
 	 */
-	
+
 	public static int filtrarNumero() {
 		int numero = 0;
 		Scanner lectura = new Scanner(System.in);
+		boolean comprobacion;
 		try {
-			numero = lectura.nextInt();
+			do {
+				comprobacion = false;
+				numero = lectura.nextInt();
+
+				if (numero <= 0) {
+					System.out.println("Error. Introduce números mayores que 0.");
+					comprobacion = true;
+				}
+			} while (comprobacion);
+
 		} catch (InputMismatchException ime) { // Detecta si el dato introducido no es un número y lanza un mensaje de
 												// error
 			System.out.println("Sólo puede escribir números. Inténtelo de nuevo: ");
@@ -44,3 +51,8 @@ public class Main {
 //Clase: Main
 //Metodo: pruebaEjemplo
 //Variable: persona
+
+//ERRORES:
+//Con 0 da mal el resultado
+// Controlar los negativos
+// Da error 99999
