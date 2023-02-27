@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Main {
 	public static void main(String[] args) {
 		System.out.println("Introduce el valor para calcular el n-ésimo número hexagonal:");
-		int numero = filtrarNumero();
+		long numero = filtrarNumero();
 		long tiempoMetodo1 = Metodos.tiempoEjecucionMetodo1(numero);
 		long tiempoMetodo2 = Metodos.tiempoEjecucionMetodo2(numero);
 		long tiempoMetodo3 = Metodos.tiempoEjecucionMetodo3(numero);
@@ -28,14 +28,14 @@ public class Main {
 	 */
 	
 	
-	public static int filtrarNumero() {
-		int numero = 0;
+	public static long filtrarNumero() {
+		long numero = 0;
 		Scanner lectura = new Scanner(System.in);
 		boolean comprobacion;
 		try {
 			do {
 				comprobacion = false;
-				numero = lectura.nextInt();
+				numero = lectura.nextLong();
 
 				if (numero <= 0) {
 					System.out.println("Error. Introduce números mayores que 0:");
