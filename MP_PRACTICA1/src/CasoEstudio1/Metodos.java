@@ -26,5 +26,31 @@ public class Metodos {
 			r = hexRecursivo(n - 1) + 4 * n - 3;
 		return r;
 	}
-
+	public static long tiempoEjecucionMetodo1(int n1) {
+		long t1, t2, tT1;
+		int m1;
+		t1=System.currentTimeMillis();
+		m1=Metodos.hexFormulaCerrada(n1);
+		t2=System.currentTimeMillis();
+	//	tT1=t2-t1; //Tiempo que ha tardado en ejecutarlo
+		return tT1=t2-t1;
+	}
+	public static long tiempoEjecucionMetodo2(int n2) {
+		long t3, t4, tT2;
+		int m2;
+		t3=System.currentTimeMillis();
+		m2=Metodos.hexIterativo(n2);
+		t4=System.currentTimeMillis();
+	//	tT2=t4-t3; 
+		return tT2=t4-t3; //Tiempo que ha tardado en ejecutarlo
+	}
+	public static long tiempoEjecucionMetodo3(int n3) {
+		long t5, t6, tT3;
+		int m3;
+		t5=System.currentTimeMillis();
+		m3=Metodos.hexRecursivo(n3);
+		t6=System.currentTimeMillis();
+	//	tT3=t6-t5;
+		return tT3=t6-t5; //Tiempo que ha tardado en ejecutarlo
+	}
 }
