@@ -7,10 +7,9 @@ public class Main {
 	public static void main(String[] args) {
 		System.out.println("Introduce el valor para calcular el n-ésimo número hexagonal:");
 		long numero = filtrarNumero();
-		long tiempoMetodo1 = Metodos.tiempoEjecucionMetodo1(numero);
-		long tiempoMetodo2 = Metodos.tiempoEjecucionMetodo2(numero);
-		long tiempoMetodo3 = Metodos.tiempoEjecucionMetodo3(numero);
-		System.out.println("El tiempo de ejecución de la formula cerrada es: " +tiempoMetodo1+"\nEl tiempo de ejecución de la formula iterativa es: " +tiempoMetodo2+"\nEl tiempo de ejecución de la formula recursiva es: "+tiempoMetodo3);
+		Metodos.tiempoEjecucionMetodo1(numero);
+		Metodos.tiempoEjecucionMetodo2(numero);
+		Metodos.tiempoEjecucionMetodo3(numero);
 	}
 
 	 /**
