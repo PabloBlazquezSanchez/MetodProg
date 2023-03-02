@@ -2,6 +2,10 @@ package CasoEstudio1;
 
 import java.time.Clock;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Metodos.
+ */
 public class Metodos {
 
 	// El algoritmo tiene una complejidad de tiempo constante O(1) debido a que el
@@ -10,10 +14,22 @@ public class Metodos {
 	// operación matemática que no depende de ninguna iteración o recursión que
 	// involucre a n.
 
+	/**
+	 * Hex formula cerrada.
+	 *
+	 * @param n the n
+	 * @return the long
+	 */
 	public static long hexFormulaCerrada(long n) {
 		return ((2 * n - 1) * n);
 	}
 
+	/**
+	 * Hex iterativo.
+	 *
+	 * @param n the n
+	 * @return the long
+	 */
 	public static long hexIterativo(long n) {
 		long r = 0;
 		for (long i = 0; i <= n - 1; i = i + 1) {
@@ -22,12 +38,24 @@ public class Metodos {
 		return r;
 	}
 
+	/**
+	 * Hex recursivo.
+	 *
+	 * @param n the n
+	 * @return the long
+	 */
 	public static long hexRecursivo(long n) {
 		long r = 1;
 		if (n > 1)
 			r = hexRecursivo(n - 1) + 4 * n - 3;
 		return r;
 	}
+	
+	/**
+	 * Tiempo ejecucion metodo 1.
+	 *
+	 * @param n1 the n 1
+	 */
 	public static void  tiempoEjecucionMetodo1(long n1) {
 		long m1;
 		long t1 = System.nanoTime();
@@ -39,6 +67,12 @@ public class Metodos {
 		//System.out.println(Long.toString(t2));
 		//Tiempo que ha tardado en ejecutarlo
 	}
+	
+	/**
+	 * Tiempo ejecucion metodo 2.
+	 *
+	 * @param n2 the n 2
+	 */
 	public static void tiempoEjecucionMetodo2(long n2) {
 		long m2;
 		long t3 = System.nanoTime();
@@ -50,6 +84,12 @@ public class Metodos {
 		System.out.println("Resultado aplicando la formula iterativa es: "+Long.toString(m2)+" | Tiempo empleado: " +result);
 
 	}
+	
+	/**
+	 * Tiempo ejecucion metodo 3.
+	 *
+	 * @param n3 the n 3
+	 */
 	public static void tiempoEjecucionMetodo3(long n3) {
 		long m3;
 		long t5 = System.nanoTime();

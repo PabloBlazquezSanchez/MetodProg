@@ -3,7 +3,16 @@ package CasoEstudio1;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * The Class Main.
+ */
 public class Main {
+	
+	/**
+	 * The main method.
+	 *
+	 * @param args the arguments
+	 */
 	public static void main(String[] args) {
 		System.out.println("Introduce el valor para calcular el n-ésimo número hexagonal:");
 		long numero = filtrarNumero();
