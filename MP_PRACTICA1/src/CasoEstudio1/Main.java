@@ -4,15 +4,24 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
- * The Class Main.
+ * Clase Main.
  */
 public class Main {
-	
+
 	/**
-	 * The main method.
+	 * 
+	 * Este es el método principal en el cuál se pregunta el número a partir del
+	 * cuál se desea calcular el n-ésimo número hexagonal. Para ello se muestra por
+	 * pantalla un mensaje preguntando el número que se desea lo almacenamos en una
+	 * variable de tipo long. Posteriormente, llamamos a los métodos introduciendo
+	 * como entrada el número ejecutado anteriormente.
+	 * 
+	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la
+	 *         Cruz, Andrea Ordoño Peña
+	 * @version 1.0
 	 *
-	 * @param args the arguments
 	 */
+
 	public static void main(String[] args) {
 		System.out.println("Introduce el valor para calcular el n-ésimo número hexagonal:");
 		long numero = filtrarNumero();
@@ -21,12 +30,14 @@ public class Main {
 		Metodos.tiempoEjecucionMetodo3(numero);
 	}
 
-	 /**
+	/**
 	 * 
 	 * Este método captura el dato introducido por teclado y analiza si se ha
 	 * introducido un caracter o un número. Si se introduce un caracter lanza un
-	 * mensaje de error, a través de la excepción incluida en la API de Java "Input
-	 * Mismatch Exception".
+	 * mensaje de error y pide al usuario introducir un número positivo, a través de
+	 * la excepción incluida en la API de Java "Input Mismatch Exception". Lo mismo
+	 * ocurre si el número introducido es igual o menor a cero, aunque en este caso
+	 * concreto no aparecerá la excepción.
 	 * 
 	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la
 	 *         Cruz, Andrea Ordoño Peña
@@ -34,8 +45,7 @@ public class Main {
 	 *
 	 * @return numero El número escrito por el usuario
 	 */
-	
-	
+
 	public static long filtrarNumero() {
 		long numero = 0;
 		Scanner lectura = new Scanner(System.in);
@@ -65,8 +75,4 @@ public class Main {
 //Variable: persona
 
 //ERRORES:
-//Con 0 da mal el resultado
-// Controlar los negativos
 // Da error 99999
-
-// Comprobar resultado de tiempo ejecucion con ejercicios resueltos
