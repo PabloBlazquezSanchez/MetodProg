@@ -2,21 +2,21 @@ package CasoEstudio1;
 
 import java.time.Clock;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class Metodos.
+ * Esta clase contiene los métodos necesarios para el cálculo del n-ésimo número
+ * Hexagonal y para la medición del tiempo de ejecución.
  */
 public class Metodos {
 
 	/**
-	 * Hex formula cerrada.
 	 * 
-	 * Este metodo aplica la expresion para calcular el n-esimo numero Hexagonal.
+	 * Este método aplica la expresión para calcular el n-ésimo número Hexagonal
+	 * gracias al uso fórmula cerrada.
 	 * 
-	 * El algoritmo tiene una complejidad de tiempo constante O˜(1) debido a que el
-	 * tiempo de ejecucion del algoritmo es independiente del tamaño de entrada y
-	 * siempre sera el mismo. La causa de esto es que el algoritmo realiza solo una
-	 * operacion matematica que no depende de ninguna iteracion o recursion que
+	 * El algoritmo tiene una complejidad de tiempo constante O(1) debido a que el
+	 * tiempo de ejecución del algoritmo es independiente del tamaño de entrada y
+	 * siempre será el mismo. La causa de esto es que el algoritmo realiza solo una
+	 * operación matemática que no depende de ninguna iteración o recursión que
 	 * involucre a n.
 	 *
 	 * @param n the n
@@ -27,13 +27,12 @@ public class Metodos {
 	}
 
 	/**
-	 * Hex iterativo.
+	 * Este método aplica la expresión para calcular el n-ésimo número Hexagonal de
+	 * la serie H(n) = Sumatorio desde i=0 hasta n-1 (4i+1) gracias al uso de
+	 * iteraciones.
 	 * 
-	 * Este metodo aplica la expresion para la obtencion del n-esimo numero de la
-	 * serie H(n) = Sumatorio desde i=0 hasta n-1 (4i+1).
-	 * 
-	 * El algoritmo presenta una complejidad de O˜(n) deducido a traves del modelo
-	 * RAM cuyo resultado es 8n+5 tras aplicar la notacion Big-Oh.
+	 * El algoritmo presenta una complejidad de O(n) deducido a través del modelo
+	 * RAM cuyo resultado es 8n+5 tras aplicar la notación Big-Oh.
 	 * 
 	 *
 	 * @param n the n
@@ -48,22 +47,22 @@ public class Metodos {
 	}
 
 	/**
-	 * Hex recursivo.
+	 * Este método aplica la expresión para calcular el n-ésimo número Hexagonal
+	 * gracias al uso de la recursividad.
 	 * 
-	 * Para conocer la relacion de recurrencia del algoritmo recursivo usado para
-	 * calcular el numero hexagonal n-esimo, es decir, de Sumatorio {desde i=0 hasta n-1}
-	 * (4i+1), vamos a quitar una iteracion al sumatorio, de forma que queda: Sumatorio
-	 * {desde i=0 hasta n-2} (4i+1). Para que el resultado no se vea alterado,
-	 * tambien le sumamos el resultado residual del termino "n-1", de manera que
-	 * queda: Sumatorio {desde i=0 hasta n-2} (4i+1) + [4(n-1)+1]. Este nuevo sumatorio
-	 * realmente es la funcion H_n con la iteracion que hemos quitado, de manera que
-	 * lo sustituimos como H_{n-1}. Y si simplificamos [4(n-1)+1] nos queda 4n - 4 +
-	 * 1 = 4n - 3. Nos queda finalmente H_n = H_{n-1} + 4n - 3. Esta relacion de
-	 * recurrencia la interpretaremos como quitar un termino de la entrada más una
-	 * operacien aritmetica residual.
-	 * 
-	 * Este algoritmo presenta una complejidad de O(n) la cual se ha deducido a
-	 * traves del metodo de sustitucion hacia atras.
+	 * Para conocer la relación de recurrencia del algoritmo recursivo usado para
+	 * calcular el número hexagonal n-ésimo, es decir, de Sumatorio {desde i=0 hasta
+	 * n-1} (4i+1), vamos a quitar una iteración al sumatorio, de forma que queda:
+	 * Sumatorio {desde i=0 hasta n-2} (4i+1). Para que el resultado no se vea
+	 * alterado, también le sumamos el resultado residual del término "n-1", de
+	 * manera que queda: Sumatorio {desde i=0 hasta n-2} (4i+1) + [4(n-1)+1]. Este
+	 * nuevo sumatorio realmente es la función H_n con la iteración que hemos
+	 * quitado, de manera que lo sustituimos como H_{n-1}. Y si simplificamos
+	 * [4(n-1)+1] nos queda 4n - 4 + 1 = 4n - 3. Nos queda finalmente H_n = H_{n-1}
+	 * + 4n - 3. Esta relación de recurrencia la interpretaremos como quitar un
+	 * término de la entrada más una operación aritmética residual. Este algoritmo
+	 * presenta una complejidad de O(n) la cual se ha deducido a través del método
+	 * de sustitución hacia atrás.
 	 * 
 	 * T(n) = T(n-1) +1 con T(1) = 1 T(n) = (T(n-2) +1) + 1 = T(n-2) + 2 = ... =
 	 * T(n-(n-1)) + (n-1) = T(1) +n -1 = n
@@ -79,47 +78,45 @@ public class Metodos {
 	}
 
 	/**
-	 * Tiempo ejecucion metodo 1.
+	 * Este método calcula el tiempo de ejecución de hexFormulaCerrada.
 	 * 
-	 * Se utiliza la funcion nanoTime() para obtener en nanosegundos la fecha y hora
+	 * Se utiliza la función nanoTime() para obtener en nanosegundos la fecha y hora
 	 * actual del sistema. Se realizan dos observaciones, una antes de aplicar el
-	 * metodo y otra una vez se ha terminado de ejecutar. La diferencia de estos
-	 * sera el tiempo en nanosegundos que le ha tomado al computador en calcular o
-	 * aplicar la formula cerrada.
+	 * método y otra una vez se ha terminado de ejecutar. La diferencia de estos
+	 * será el tiempo en nanosegundos que le ha tomado al computador en calcular o
+	 * aplicar la fórmula cerrada.
 	 *
-	 * @param n1 the n 1
+	 * @param n1 El número a partir del cuál se desea calcular el n-ésimo número
+	 *           Hexagonal
 	 */
 	public static void tiempoEjecucionMetodo1(long n1) {
 		long m1;
 		long t1 = System.nanoTime();
-		// System.out.println(Long.toString(t1));
 		m1 = Metodos.hexFormulaCerrada(n1);
 		long t2 = System.nanoTime();
 		long result = t2 - t1;
 		System.out.println(
 				"Resultado aplicando la formula cerrada: " + Long.toString(m1) + " | Tiempo empleado: " + result);
-		// System.out.println(Long.toString(t2));
-		// Tiempo que ha tardado en ejecutarlo
+
 	}
 
 	/**
-	 * Tiempo ejecucion metodo 2.
+	 * Este método calcula el tiempo de ejecución de hexIterativo.
 	 * 
-	 * De nuevo, empleamos la funcion nanoTime() para obtener en nanosegundos la
+	 * De nuevo, empleamos la función nanoTime() para obtener en nanosegundos la
 	 * fecha y hora actual del sistema. Se realizan dos observaciones, una antes de
-	 * aplicar el metodo y otra una vez se ha terminado de ejecutar. La diferencia
-	 * de estos sera el tiempo en nanosegundos que le ha tomado al computador en
+	 * aplicar el método y otra una vez se ha terminado de ejecutar. La diferencia
+	 * de estos será el tiempo en nanosegundos que le ha tomado al computador en
 	 * ejecutar el algoritmo iterativo.
 	 *
-	 * @param n2 the n 2
+	 * @param n2 El número a partir del cuál se desea calcular el n-ésimo número
+	 *           Hexagonal
 	 */
 	public static void tiempoEjecucionMetodo2(long n2) {
 		long m2;
 		long t3 = System.nanoTime();
-		// System.out.println(Long.toString(t3));
 		m2 = Metodos.hexIterativo(n2);
 		long t4 = System.nanoTime();
-		// System.out.println(Long.toString(t4));
 		long result = (t4 - t3); // Tiempo que ha tardado en ejecutarlo
 		System.out.println(
 				"Resultado aplicando la formula iterativa es: " + Long.toString(m2) + " | Tiempo empleado: " + result);
@@ -127,26 +124,32 @@ public class Metodos {
 	}
 
 	/**
-	 * Tiempo ejecucion metodo 3.
+	 * Este método calcula el tiempo de ejecución de hexRecursivo.
 	 *
-	 * Una vez mas, se emplea la funcion nanoTime() para obtener en nanosegundos la fecha y hora
-	 * actual del sistema. Se realizan dos observaciones, una antes de aplicar el
-	 * metodo y otra una vez se ha terminado de ejecutar. La diferencia de estos
-	 * sera el tiempo en nanosegundos que le ha tomado al computador en ejecutar el
-	 * algoritmo recursivo.
+	 * Una vez más, se emplea la función nanoTime() para obtener en nanosegundos la
+	 * fecha y hora actual del sistema. Se realizan dos observaciones, una antes de
+	 * aplicar el método y otra una vez se ha terminado de ejecutar. La diferencia
+	 * de estos será el tiempo en nanosegundos que le ha tomado al computador en
+	 * ejecutar el algoritmo recursivo.
 	 * 
-	 * @param n3 the n 3
+	 * Se controla la StackOverflowError debido a que si el usuario introduce un
+	 * número demasiado grande, habrá un desbordamiento de la pila.
+	 * 
+	 * @param n3 El número a partir del cuál se desea calcular el n-ésimo número
+	 *           Hexagonal
 	 */
 	public static void tiempoEjecucionMetodo3(long n3) {
-		long m3;
-		long t5 = System.nanoTime();
-//		System.out.println(Long.toString(t5));
-		m3 = Metodos.hexRecursivo(n3);
-		long t6 = System.nanoTime();
-//		System.out.println(Long.toString(t6));
-		long result = (t6 - t5); // Tiempo que ha tardado en ejecutarlo
-		System.out.println(
-				"Resultado aplicando la formula recursiva es: " + Long.toString(m3) + " | Tiempo empleado: " + result);
-
+		try {
+			long m3;
+			long t5 = System.nanoTime();
+			m3 = Metodos.hexRecursivo(n3);
+			long t6 = System.nanoTime();
+			long result = (t6 - t5); // Tiempo que ha tardado en ejecutarlo
+			System.out.println("Resultado aplicando la formula recursiva es: " + Long.toString(m3)
+					+ " | Tiempo empleado: " + result);
+		} catch (StackOverflowError e) {
+			System.out.println(
+					"Error. El número introducido es demasiado grande para ser calculado a través de este método.");
+		}
 	}
 }

@@ -4,7 +4,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
- * Clase Main.
+ * Esta clase es la principal que se encarga del preguntar al usario el valor para calcular el n-ésimo número hexagonal
  */
 public class Main {
 
