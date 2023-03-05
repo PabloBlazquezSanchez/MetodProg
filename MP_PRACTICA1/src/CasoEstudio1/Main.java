@@ -10,20 +10,20 @@ public class Main {
 
 	/**
 	 * 
-	 * Este es el mÃ©todo principal en el cuÃ¡l se pregunta el nÃºmero a partir del
-	 * cuÃ¡l se desea calcular el n-Ã©simo nÃºmero hexagonal. Para ello se muestra por
-	 * pantalla un mensaje preguntando el nÃºmero que se desea lo almacenamos en una
-	 * variable de tipo long. Posteriormente, llamamos a los mÃ©todos introduciendo
-	 * como entrada el nÃºmero ejecutado anteriormente.
+	 * Este es el método principal en el cual se pregunta el número a partir del
+	 * cual se desea calcular el n-ésimo número hexagonal. Para ello se muestra por
+	 * pantalla un mensaje preguntando el número que se desea lo almacenamos en una
+	 * variable de tipo long. Posteriormente, llamamos a los métodos introduciendo
+	 * como entrada el número ejecutado anteriormente.
 	 * 
-	 * @author Pablo BlÃ¡zquez SÃ¡nchez, JesÃºs FernÃ¡ndez LÃ³pez, RaÃºl JimÃ©nez de la
-	 *         Cruz, Andrea OrdoÃ±o PeÃ±a
+	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la
+	 *         Cruz, Andrea Ordoño Peña
 	 * @version 1.0
 	 *
 	 */
 
 	public static void main(String[] args) {
-		System.out.println("Introduce el valor para calcular el n-Ã©simo nÃºmero hexagonal:");
+		System.out.println("Introduce el valor para calcular el n-ésimo número hexagonal:");
 		long numero = filtrarNumero();
 		Metodos.tiempoEjecucionMetodo1(numero);
 		Metodos.tiempoEjecucionMetodo2(numero);
@@ -32,18 +32,18 @@ public class Main {
 
 	/**
 	 * 
-	 * Este mÃ©todo captura el dato introducido por teclado y analiza si se ha
-	 * introducido un caracter o un nÃºmero. Si se introduce un caracter lanza un
-	 * mensaje de error y pide al usuario introducir un nÃºmero positivo, a travÃ©s de
-	 * la excepciÃ³n incluida en la API de Java "Input Mismatch Exception". Lo mismo
-	 * ocurre si el nÃºmero introducido es igual o menor a cero, aunque en este caso
-	 * concreto no aparecerÃ¡ la excepciÃ³n.
+	 * Este método captura el dato introducido por teclado y analiza si se ha
+	 * introducido un caracter o un número. Si se introduce un caracter lanza un
+	 * mensaje de error y pide al usuario introducir un número positivo, a través de
+	 * la excepción incluida en la API de Java "Input Mismatch Exception". Lo mismo
+	 * ocurre si el número introducido es igual o menor a cero, aunque en este caso
+	 * concreto no aparecerá la excepción.
 	 * 
-	 * @author Pablo BlÃ¡zquez SÃ¡nchez, JesÃºs FernÃ¡ndez LÃ³pez, RaÃºl JimÃ©nez de la
-	 *         Cruz, Andrea OrdoÃ±o PeÃ±a
+	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la
+	 *         Cruz, Andrea Ordoño Peña
 	 * @version 1.0
 	 *
-	 * @return numero El nÃºmero escrito por el usuario
+	 * @return numero El número escrito por el usuario
 	 */
 
 	public static long filtrarNumero() {
@@ -56,14 +56,14 @@ public class Main {
 				numero = lectura.nextLong();
 
 				if (numero <= 0) {
-					System.out.println("Error. Introduce nÃºmeros mayores que 0:");
+					System.out.println("Error. Introduce números mayores que 0:");
 					comprobacion = true;
 				}
 			} while (comprobacion);
 
-		} catch (InputMismatchException ime) { // Detecta si el dato introducido no es un nÃºmero y lanza un mensaje de
+		} catch (InputMismatchException ime) { // Detecta si el dato introducido no es un número y lanza un mensaje de
 												// error
-			System.out.println("SÃ³lo puede escribir nÃºmeros. IntÃ©ntelo de nuevo: ");
+			System.out.println("Sólo puede escribir números. Inténtelo de nuevo: ");
 			numero = filtrarNumero(); // Vuelve a solicitar el dato
 		}
 		return numero;

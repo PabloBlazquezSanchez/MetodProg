@@ -11,12 +11,12 @@ public class Metodos {
 	/**
 	 * Hex formula cerrada.
 	 * 
-	 * Este método aplica la expresión para calcular el n-ésimo número Hexagonal.
+	 * Este metodo aplica la expresion para calcular el n-esimo numero Hexagonal.
 	 * 
-	 * El algoritmo tiene una complejidad de tiempo constante Θ(1) debido a que el
-	 * tiempo de ejecución del algoritmo es independiente del tamaño de entrada y
-	 * siempre será el mismo. La causa de esto es que el algoritmo realiza solo una
-	 * operación matemática que no depende de ninguna iteración o recursión que
+	 * El algoritmo tiene una complejidad de tiempo constante O�(1) debido a que el
+	 * tiempo de ejecucion del algoritmo es independiente del tama�o de entrada y
+	 * siempre sera el mismo. La causa de esto es que el algoritmo realiza solo una
+	 * operacion matematica que no depende de ninguna iteracion o recursion que
 	 * involucre a n.
 	 *
 	 * @param n the n
@@ -29,43 +29,43 @@ public class Metodos {
 	/**
 	 * Hex iterativo.
 	 * 
-	 * Este método aplica la expresión para la obtención del n-ésimo número de la
-	 * serie H(n) = i=0Σn-1 (4i+1).
+	 * Este metodo aplica la expresion para la obtencion del n-esimo numero de la
+	 * serie H(n) = Sumatorio desde i=0 hasta n-1 (4i+1).
 	 * 
-	 * El algoritmo presenta una complejidad de Θ(n) deducido a través del modelo
-	 * RAM cuyo resultado es 8n+5 tras aplicar la notación Big-Oh.
+	 * El algoritmo presenta una complejidad de O�(n) deducido a traves del modelo
+	 * RAM cuyo resultado es 8n+5 tras aplicar la notacion Big-Oh.
 	 * 
 	 *
 	 * @param n the n
 	 * @return the long
 	 */
 	public static long hexIterativo(long n) {
-		long r = 0;// 1 asignación
-		for (long i = 0; i <= n - 1; i = i + 1) { // 1 asignación, 2(n+1) comparaciones, 2n incrementos
-			r += (4 * i + 1); // 4n (3 operaciones aritméticas y una asignación)
+		long r = 0;// 1 asignacion
+		for (long i = 0; i <= n - 1; i = i + 1) { // 1 asignacion, 2(n+1) comparaciones, 2n incrementos
+			r += (4 * i + 1); // 4n (3 operaciones aritmeticas y una asignacion)
 		}
-		return r; // Operación de retorno (1)
+		return r; // Operacion de retorno (1)
 	}
 
 	/**
 	 * Hex recursivo.
 	 * 
-	 * Para conocer la relación de recurrencia del algoritmo recursivo usado para
-	 * calcular el número hexagonal n-ésimo, es decir, de Σ {desde i=0 hasta n-1}
-	 * (4i+1), vamos a quitar una iteración al sumatorio, de forma que queda: Σ
+	 * Para conocer la relacion de recurrencia del algoritmo recursivo usado para
+	 * calcular el numero hexagonal n-esimo, es decir, de Sumatorio {desde i=0 hasta n-1}
+	 * (4i+1), vamos a quitar una iteracion al sumatorio, de forma que queda: Sumatorio
 	 * {desde i=0 hasta n-2} (4i+1). Para que el resultado no se vea alterado,
-	 * también le sumamos el resultado residual del término "n-1", de manera que
-	 * queda: Σ {desde i=0 hasta n-2} (4i+1) + [4(n-1)+1]. Este nuevo sumatorio
-	 * realmente es la función H_n con la iteración que hemos quitado, de manera que
+	 * tambien le sumamos el resultado residual del termino "n-1", de manera que
+	 * queda: Sumatorio {desde i=0 hasta n-2} (4i+1) + [4(n-1)+1]. Este nuevo sumatorio
+	 * realmente es la funcion H_n con la iteracion que hemos quitado, de manera que
 	 * lo sustituimos como H_{n-1}. Y si simplificamos [4(n-1)+1] nos queda 4n - 4 +
-	 * 1 = 4n – 3. Nos queda finalmente H_n = H_{n-1} + 4n - 3. Esta relación de
-	 * recurrencia la interpretaremos como quitar un término de la entrada más una
-	 * operación aritmética residual.
+	 * 1 = 4n - 3. Nos queda finalmente H_n = H_{n-1} + 4n - 3. Esta relacion de
+	 * recurrencia la interpretaremos como quitar un termino de la entrada m�s una
+	 * operacien aritmetica residual.
 	 * 
-	 * Este algoritmo presenta una complejidad de Θ(n) la cual se ha deducido a
-	 * través del método de sustitución hacia atrás.
+	 * Este algoritmo presenta una complejidad de O(n) la cual se ha deducido a
+	 * traves del metodo de sustitucion hacia atras.
 	 * 
-	 * T(n) = T(n-1) +1 con T(1) = 1 T(n) = (T(n-2) +1) + 1 = T(n-2) + 2 = … =
+	 * T(n) = T(n-1) +1 con T(1) = 1 T(n) = (T(n-2) +1) + 1 = T(n-2) + 2 = ... =
 	 * T(n-(n-1)) + (n-1) = T(1) +n -1 = n
 	 *
 	 * @param n the n
@@ -81,11 +81,11 @@ public class Metodos {
 	/**
 	 * Tiempo ejecucion metodo 1.
 	 * 
-	 * Se utiliza la función nanoTime() para obtener en nanosegundos la fecha y hora
+	 * Se utiliza la funcion nanoTime() para obtener en nanosegundos la fecha y hora
 	 * actual del sistema. Se realizan dos observaciones, una antes de aplicar el
-	 * método y otra una vez se ha terminado de ejecutar. La diferencia de estos
-	 * será el tiempo en nanosegundos que le ha tomado al computador en calcular o
-	 * aplicar la fórmula cerrada.
+	 * metodo y otra una vez se ha terminado de ejecutar. La diferencia de estos
+	 * sera el tiempo en nanosegundos que le ha tomado al computador en calcular o
+	 * aplicar la formula cerrada.
 	 *
 	 * @param n1 the n 1
 	 */
@@ -105,10 +105,10 @@ public class Metodos {
 	/**
 	 * Tiempo ejecucion metodo 2.
 	 * 
-	 * De nuevo, empleamos la función nanoTime() para obtener en nanosegundos la
+	 * De nuevo, empleamos la funcion nanoTime() para obtener en nanosegundos la
 	 * fecha y hora actual del sistema. Se realizan dos observaciones, una antes de
-	 * aplicar el método y otra una vez se ha terminado de ejecutar. La diferencia
-	 * de estos será el tiempo en nanosegundos que le ha tomado al computador en
+	 * aplicar el metodo y otra una vez se ha terminado de ejecutar. La diferencia
+	 * de estos sera el tiempo en nanosegundos que le ha tomado al computador en
 	 * ejecutar el algoritmo iterativo.
 	 *
 	 * @param n2 the n 2
@@ -129,10 +129,10 @@ public class Metodos {
 	/**
 	 * Tiempo ejecucion metodo 3.
 	 *
-	 * Una vez más, se emplea la función nanoTime() para obtener en nanosegundos la fecha y hora
+	 * Una vez mas, se emplea la funcion nanoTime() para obtener en nanosegundos la fecha y hora
 	 * actual del sistema. Se realizan dos observaciones, una antes de aplicar el
-	 * método y otra una vez se ha terminado de ejecutar. La diferencia de estos
-	 * será el tiempo en nanosegundos que le ha tomado al computador en ejecutar el
+	 * metodo y otra una vez se ha terminado de ejecutar. La diferencia de estos
+	 * sera el tiempo en nanosegundos que le ha tomado al computador en ejecutar el
 	 * algoritmo recursivo.
 	 * 
 	 * @param n3 the n 3
