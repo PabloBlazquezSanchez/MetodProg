@@ -1,4 +1,4 @@
-package Ejemplo;
+package CasoEstudio2;
 
 public class Hola_mundo {
 	public static void main(String[] args) {
