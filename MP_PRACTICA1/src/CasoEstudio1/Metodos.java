@@ -193,6 +193,4 @@ public class Metodos {
 		}
 		return numero;
 	}
-
-	
 }
