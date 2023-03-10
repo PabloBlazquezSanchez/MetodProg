@@ -18,8 +18,34 @@ public class Metodos {
 
 		return count;
 	}
-	public static void merge (int [ ] a, int left, int middle, int right) {
+//	public static void merge (int [ ] a, int left, int middle, int right) {
+//		int i = left, j = middle+1, k = left;
+//		int [] aux = new int[right-left+1]; // Creamos el array auxiliar
+//		for (int f = left; f <= right; f++) // copiamos las dos mitades del array en el array auxiliar
+//			aux[f-left] = a[f];
+//		while (i <= middle && j <= right) {  //copia el siguiente elemento que sea más grande
+//			if (aux[i-left] <= aux[j-left]) {
+//				a[k] = aux[i-left];
+//				i++;
+//			} else {
+//				a[k] = aux[j-left];
+//				j++;
+//			}
+//			k++;
+//		}
+//		if (j-1 == right) {  // copia lo que queda del array de la primera mitad
+//			while (i<= middle) {
+//				a[k] = aux[i-left];
+//				k++;
+//				i++;
+//			}
+//		}
+//	}
+	public static int mergeAndCount(int[] a, int left, int middle, int right) {
+		// Maintain a pointer into each subarray, pointing to the front elements
+		int count = 0; // Maintain a variable Count for the number of inversions, initialized to 0
 		int i = left, j = middle+1, k = left;
+		int [] current = new int[a.length];
 		int [] aux = new int[right-left+1]; // Creamos el array auxiliar
 		for (int f = left; f <= right; f++) // copiamos las dos mitades del array en el array auxiliar
 			aux[f-left] = a[f];
@@ -30,6 +56,7 @@ public class Metodos {
 			} else {
 				a[k] = aux[j-left];
 				j++;
+				count = count+(middle-left);
 			}
 			k++;
 		}
@@ -40,11 +67,6 @@ public class Metodos {
 				i++;
 			}
 		}
-	}
-	public static int mergeAndCount(int[] a, int left, int middle, int right) {
-		// Maintain a pointer into each subarray, pointing to the front elements
-
-		int count = 0; // Maintain a variable Count for the number of inversions, initialized to 0
 
 		return count;
 	}
