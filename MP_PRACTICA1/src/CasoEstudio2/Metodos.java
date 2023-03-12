@@ -18,6 +18,7 @@ public class Metodos {
 
 		return count;
 	}
+
 //	public static void merge (int [ ] a, int left, int middle, int right) {
 //		int i = left, j = middle+1, k = left;
 //		int [] aux = new int[right-left+1]; // Creamos el array auxiliar
@@ -41,28 +42,39 @@ public class Metodos {
 //			}
 //		}
 //	}
+
+	public static void mergesort(int[] array, int left, int right) { //faltaba este metodo
+		if (left < right) {
+			int mid = (int) Math.floor((left + right) / 2); //me aseguro de que se trunque / función suelo
+			//int mid = (left + right) / 2;
+			mergesort(array, left, mid);
+			mergesort(array, mid + 1, right);
+			mergeAndCount(array, left, mid, right);
+		}
+	}
+
 	public static int mergeAndCount(int[] a, int left, int middle, int right) {
 		// Maintain a pointer into each subarray, pointing to the front elements
 		int count = 0; // Maintain a variable Count for the number of inversions, initialized to 0
-		int i = left, j = middle+1, k = left;
-		int [] current = new int[a.length];
-		int [] aux = new int[right-left+1]; // Creamos el array auxiliar
+		int i = left, j = middle + 1, k = left;
+		// int[] current = new int[a.length]; NO SE UTILIZA
+		int[] aux = new int[right - left + 1]; // Creamos el array auxiliar
 		for (int f = left; f <= right; f++) // copiamos las dos mitades del array en el array auxiliar
-			aux[f-left] = a[f];
-		while (i <= middle && j <= right) {  //copia el siguiente elemento que sea más grande
-			if (aux[i-left] <= aux[j-left]) {
-				a[k] = aux[i-left];
+			aux[f - left] = a[f];
+		while (i <= middle && j <= right) { // copia el siguiente elemento que sea más grande
+			if (aux[i - left] <= aux[j - left]) {
+				a[k] = aux[i - left];
 				i++;
 			} else {
-				a[k] = aux[j-left];
+				a[k] = aux[j - left];
 				j++;
-				count = count+(middle-left);
+				count = count + (middle - left);
 			}
 			k++;
 		}
-		if (j-1 == right) {  // copia lo que queda del array de la primera mitad
-			while (i<= middle) {
-				a[k] = aux[i-left];
+		if (j - 1 == right) { // copia lo que queda del array de la primera mitad
+			while (i <= middle) {
+				a[k] = aux[i - left];
 				k++;
 				i++;
 			}
