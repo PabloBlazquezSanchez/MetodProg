@@ -83,28 +83,25 @@ public static void mergesort(int[] array, int left, int right) { //faltaba este 
 	 * @return the int
 	 */
 	public static int mergeAndCount(int[] a, int left, int middle, int right) {
-		// Maintain a pointer into each subarray, pointing to the front elements
 		int count = 0; // Maintain a variable Count for the number of inversions, initialized to 0
-		int i = left, j = middle + 1, k = left;
-		// int[] current = new int[a.length]; NO SE UTILIZA
-		int[] aux = new int[right - left + 1]; // Creamos el array auxiliar
+		int i = left, j = middle + 1, k = left; // Maintain a pointer into each subarray, pointing to the front elements
+		int[] current = new int[right - left + 1]; // Creamos el array auxiliar
 		for (int f = left; f <= right; f++) // copiamos las dos mitades del array en el array auxiliar
-			aux[f - left] = a[f];
+			current[f - left] = a[f];
 		while (i <= middle && j <= right) { // copia el siguiente elemento que sea más grande
-			if (aux[i - left] <= aux[j - left]) {
-				a[k] = aux[i - left];
+			if (current[i - left] <= current[j - left]) {
+				a[k] = current[i - left];
 				i++;
-				count = 1 + aux[j-left]; 
 			} else {
-				a[k] = aux[j - left];
+				a[k] = current[j - left];
 				j++;
-				count = count + (middle - left);
+				count = count + (middle - left)+1;
 			}
 			k++;
 		}
 		if (j - 1 == right) { // copia lo que queda del array de la primera mitad
 			while (i <= middle) {
-				a[k] = aux[i - left];
+				a[k] = current[i - left];
 				k++;
 				i++;
 			}
