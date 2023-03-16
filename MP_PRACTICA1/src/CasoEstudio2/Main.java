@@ -18,12 +18,13 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		openFile();
-		System.out.println(Metodos.countInversions(b, 0, b.length-1));
+		System.out.println(Metodos.countInversions(b, 0, b.length - 1));
 	}
 
 	/**
 	 * Open file.
 	 */
+
 	public static void openFile() {
 		try {
 			Scanner read = new Scanner(new File("InversionsTest_12.dat"));
