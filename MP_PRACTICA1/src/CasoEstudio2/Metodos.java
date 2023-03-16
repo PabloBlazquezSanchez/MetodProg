@@ -5,7 +5,20 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Metodos.
+ */
 public class Metodos {
+	
+	/**
+	 * Count inversions.
+	 *
+	 * @param a the a
+	 * @param left the left
+	 * @param right the right
+	 * @return the int
+	 */
 	public static int countInversions(int[] a, int left, int right) {
 		int middle = (left + right) / 2; // Floor operator
 		int count = 0;
@@ -43,7 +56,14 @@ public class Metodos {
 //		}
 //	}
 
-	public static void mergesort(int[] array, int left, int right) { //faltaba este metodo
+	/**
+ * Mergesort.
+ *
+ * @param array the array
+ * @param left the left
+ * @param right the right
+ */
+public static void mergesort(int[] array, int left, int right) { //faltaba este metodo
 		if (left < right) {
 			int mid = (int) Math.floor((left + right) / 2); //me aseguro de que se trunque / función suelo
 			//int mid = (left + right) / 2;
@@ -53,6 +73,15 @@ public class Metodos {
 		}
 	}
 
+	/**
+	 * Merge and count.
+	 *
+	 * @param a the a
+	 * @param left the left
+	 * @param middle the middle
+	 * @param right the right
+	 * @return the int
+	 */
 	public static int mergeAndCount(int[] a, int left, int middle, int right) {
 		// Maintain a pointer into each subarray, pointing to the front elements
 		int count = 0; // Maintain a variable Count for the number of inversions, initialized to 0
@@ -84,6 +113,9 @@ public class Metodos {
 		return count;
 	}
 
+	/**
+	 * Open file.
+	 */
 	public static void openFile() {
 		try {
 			Scanner read = new Scanner(new File("InversionsTest_6.dat"));
