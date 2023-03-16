@@ -19,7 +19,6 @@ public class Main {
 	public static void main(String[] args) {
 		openFile();
 		System.out.println(Metodos.countInversions(b, 0, b.length-1));
-
 	}
 
 	/**
@@ -27,7 +26,7 @@ public class Main {
 	 */
 	public static void openFile() {
 		try {
-			Scanner read = new Scanner(new File("InversionsTest_6.dat"));
+			Scanner read = new Scanner(new File("InversionsTest_12.dat"));
 			int nCases = read.nextInt(); // El primer valor es el número de casos
 			double[] a = new double[nCases];
 			for (int i = 0; i < nCases; i++) {

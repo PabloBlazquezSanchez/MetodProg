@@ -29,7 +29,6 @@ public class Metodos {
 			count = count + countInversions(a, middle + 1, right);
 			count = count + mergeAndCount(a, left, middle, right);
 		}
-
 		return count;
 	}
 
