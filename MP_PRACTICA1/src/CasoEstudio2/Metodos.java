@@ -53,6 +53,7 @@ public class Metodos {
 			if (aux[i-left] <= aux[j-left]) {
 				a[k] = aux[i-left];
 				i++;
+				count = 1 + aux[j-left]; 
 			} else {
 				a[k] = aux[j-left];
 				j++;
