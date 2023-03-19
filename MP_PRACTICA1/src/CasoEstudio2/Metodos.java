@@ -6,23 +6,22 @@ import java.io.IOException;
 import java.util.Scanner;
 
 /**
- * The Class Metodos.
+ * Esta clase contiene los métodos necesarios para contar el número de inversiones usando el patrón divide y vencerás.
  */
 
 public class Metodos {
 
 	/**
-	 * Count inversions.
-	 * 
 	 * Este método realiza una llamada recursiva a sí misma donde se va dividiendo el array
-	 * por la mitad hasta que solo quede un elemento en el mismo. Una vez tenemos todos los
-	 * elementos separados procedemos a ordenarlos a través del método mergeandCount, donde
+	 * por la mitad hasta que solo quede un elemento en el mismo.
+	 * Una vez tenemos todos los elementos separados procedemos a ordenarlos a través del método mergeandCount, donde
 	 * se contará el número de inversiones.
 	 *
-	 * @param a     the a
-	 * @param left  the left
-	 * @param right the right
-	 * @return the int
+	 * @param a      Array de números que se va a ordenar.
+	 * @param left   Índice del primer elemento del primer subarray que se está fusionando.
+	 * @param middle Índice del último elemento del primer subarray que se está fusionando.
+	 * @param right  Índice del último elemento del segundo subarray que se está fusionando.
+	 * @return count Número de inversiones
 	 */
 	public static int countInversions(double[] a, int left, int right) {//mergesort
 		int middle = (left + right) / 2; // Floor operator
@@ -38,9 +37,15 @@ public class Metodos {
 	}
 
 	/**
-	 * Merge and count.
+	 * Este método se va a encargar de ordenar el array a apoyándose en un array auxiliar
+	 * del tamaño de la mitad que nos llega. 
 	 * 
-	 * RELACIÓN DE RECURRENCIA PARA UN T(n)
+	 * Entonces, en este se copia el contenido de a que se requiere ordenar. 
+	 * A partir de aquí se escribe en a el elemento más grande aplicándose inversiones 
+	 * si fuese el de la mitad izquierda, hasta agotar la mitad
+	 * izquierda del array, para que así se pueda incluir la mitad derecha.
+	 * 
+	 * RELACIÓN DE RECURRENCIA PARA UN T(n):
 	 * 
 	 * Para un array monodimensional, lo primero que hacemos en countInversions es dividir
 	 * el array, es decir, calcular la mitad de la longitud del mismo. Esta
@@ -68,20 +73,13 @@ public class Metodos {
 	 * nuestro algoritmo tendrá una recurrencia del orden O(n^d*log n) => O(n^1*log n)
 	 * =O(n log n)
 	 * 
-	 * ------------------------------------
-	 * 
-	 * Este método se va a encargar de ordenar el array a apoyándose en un array auxiliar
-	 * del tamaño de la mitad que nos llega. Entonces, en este se copia el contenido de a
-	 * que se requiere ordenar. A partir de aquí se escribe en a el elemento más grande
-	 * aplicándose inversiones si fuese el de la mitad izquierda, hasta agotar la mitad
-	 * izquierda del array, para que así se pueda incluir la mitad derecha.
 	 * 
 	 *
-	 * @param a      the a
-	 * @param left   the left
-	 * @param middle the middle
-	 * @param right  the right
-	 * @return the int
+	 * @param a      Array de números que se va a ordenar.
+	 * @param left   Índice del primer elemento del primer subarray que se está fusionando.
+	 * @param middle Índice del último elemento del primer subarray que se está fusionando.
+	 * @param right  Índice del último elemento del segundo subarray que se está fusionando.
+	 * @return count Número de inversiones
 	 */
 
 	public static int mergeAndCount(double[] a, int left, int middle, int right) {//merge

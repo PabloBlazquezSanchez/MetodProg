@@ -59,7 +59,7 @@ public class triste {
  
     public static void main(String[] args) {
 		openFile();
-		System.out.println(Metodos.countInversions(b, 0, b.length-1));
+		System.out.println("El número de inversiones usando el patrón divide y vencerás es "+Metodos.countInversions(b, 0, b.length-1));
 
 	}
 
