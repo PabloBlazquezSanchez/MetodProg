@@ -12,7 +12,9 @@ public class Main {
 	static double[] b;
 
 	/**
-	 * The main method.
+	 * Este es el método principal donde se llamará al método openFile() para extraer los datos del fichero
+	 * y almacenarlos en un array global b. Posteriormente, se imprimirá por pantalla el resultado de llamar
+	 * al método countInversions(b, 0, b.length - 1) situado en la clase Metodos.java.
 	 *
 	 * @param args the arguments
 	 */
@@ -23,6 +25,12 @@ public class Main {
 
 	/**
 	 * Open file.
+	 * Este método se encarga de recorrer el fichero el cual se pasa como parámetro
+	 * en la llamada. Una función característica del método es que va a detectar si
+	 * el fichero se encuentra en el directorio. En caso afirmativo procederá a
+	 * recorrerlo. En caso contrario saltará una excepción en la que notificará que
+	 * el fichero no se encuentra en el directorio de búsqueda y finalizará el
+	 * programa.
 	 */
 
 	public static void openFile() {
