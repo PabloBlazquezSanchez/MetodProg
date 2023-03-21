@@ -1,4 +1,4 @@
-package CasoEstudio2;
+package CasoEstudio2_Hito;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -49,6 +49,11 @@ public class Metodos {
 	 * si fuese el de la mitad izquierda, hasta agotar la mitad izquierda del array,
 	 * para que así se pueda incluir la mitad derecha.
 	 * 
+	 * Ahora, el método mergeAndCount acepta un argumento adicional llamado target,
+	 * que representa el número específico para el cual deseas contar las
+	 * inversiones. Solo se actualiza la variable count si el número involucrado en
+	 * la inversión es igual al número objetivo.
+	 * 
 	 * RELACIÓN DE RECURRENCIA PARA UN T(n):
 	 * 
 	 * Para un array monodimensional, lo primero que hacemos en countInversions es
@@ -90,6 +95,7 @@ public class Metodos {
 	 */
 
 	public static int mergeAndCount(double[] a, int left, int middle, int right) {// merge
+		int target = 4;
 		int count = 0; // Maintain a variable Count for the number of inversions, initialized to 0
 		int i = left, j = middle + 1, k = left; // Maintain a pointer into each subarray, pointing to the front elements
 		double[] current = new double[right - left + 1]; // Creamos el array auxiliar
@@ -102,7 +108,10 @@ public class Metodos {
 			} else {
 				a[k] = current[j - left];
 				j++;
-				count = count + (middle - left) + 1;
+
+				if (current[i - left] == target) {// Solo cuenta la inversión si involucra el número objetivo
+					count = count + (middle - left) + 1;
+				}
 			}
 			k++;
 		}
@@ -116,5 +125,4 @@ public class Metodos {
 
 		return count;
 	}
-
 }

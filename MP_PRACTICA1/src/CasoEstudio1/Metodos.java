@@ -21,8 +21,10 @@ public class Metodos {
 	 * operación matemática que no depende de ninguna iteración o recursión que
 	 * involucre a n.
 	 *
-	 * @param n El número a partir del cuál se desea calcular el n-ésimo número Hexagonal
-	 * @return r - El resultado que se produce tras haber realizado las operaciones del método
+	 * @param n El número a partir del cuál se desea calcular el n-ésimo número
+	 *          Hexagonal
+	 * @return r - El resultado que se produce tras haber realizado las operaciones
+	 *         del método
 	 */
 	public static long hexFormulaCerrada(long n) {
 		return ((2 * n - 1) * n);
@@ -37,8 +39,10 @@ public class Metodos {
 	 * RAM cuyo resultado es 8n+5 tras aplicar la notación Big-Oh.
 	 * 
 	 *
-	 * @param n El número a partir del cuál se desea calcular el n-ésimo número Hexagonal
-	 * @return r - El resultado que se produce tras haber realizado las operaciones del método.
+	 * @param n El número a partir del cuál se desea calcular el n-ésimo número
+	 *          Hexagonal
+	 * @return r - El resultado que se produce tras haber realizado las operaciones
+	 *         del método.
 	 */
 	public static long hexIterativo(long n) {
 		long r = 0;// 1 asignacion
@@ -69,8 +73,10 @@ public class Metodos {
 	 * T(n) = T(n-1) +1 con T(1) = 1 T(n) = (T(n-2) +1) + 1 = T(n-2) + 2 = ... =
 	 * T(n-(n-1)) + (n-1) = T(1) +n -1 = n
 	 *
-	 * @param n El número a partir del cuál se desea calcular el n-ésimo número Hexagonal
-	 * @return r - El resultado que se produce tras haber realizado las operaciones del método.
+	 * @param n El número a partir del cuál se desea calcular el n-ésimo número
+	 *          Hexagonal
+	 * @return r - El resultado que se produce tras haber realizado las operaciones
+	 *         del método.
 	 */
 	public static long hexRecursivo(long n) {
 		long r = 1;
@@ -154,7 +160,7 @@ public class Metodos {
 					"Error. El número introducido es demasiado grande para ser calculado a través de este método.");
 		}
 	}
-	
+
 	/**
 	 * 
 	 * Este método captura el dato introducido por teclado y analiza si se ha

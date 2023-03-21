@@ -1,4 +1,4 @@
-package CasoEstudio2;
+package CasoEstudio2_Hito;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -68,7 +68,7 @@ public class triste {
 	 */
 	public static void openFile() {
 		try {
-			Scanner read = new Scanner(new File("InversionsTest_12.dat"));
+			Scanner read = new Scanner(new File("prueba.dat"));
 			int nCases = read.nextInt(); // El primer valor es el número de casos
 			double[] a = new double[nCases];
 			for (int i = 0; i < nCases; i++) {
