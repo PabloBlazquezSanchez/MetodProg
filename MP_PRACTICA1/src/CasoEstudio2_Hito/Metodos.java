@@ -44,9 +44,9 @@ public class Metodos {
 	 * Este método se va a encargar de ordenar el array a apoyándose en un array
 	 * auxiliar del tamaño de la mitad que nos llega.
 	 * 
-	 * Entonces, en este se copia el contenido de a que se requiere ordenar. A
+	 * Entonces, en este se copia el contenido que se requiere ordenar. A
 	 * partir de aquí se escribe en a el elemento más grande aplicándose inversiones
-	 * si fuese el de la mitad izquierda, hasta agotar la mitad izquierda del array,
+	 * si fuese el elemeento de la mitad izquierda, hasta agotar la mitad izquierda del array,
 	 * para que así se pueda incluir la mitad derecha.
 	 * 
 	 * Ahora, el método mergeAndCount acepta un argumento adicional llamado target,
@@ -95,7 +95,6 @@ public class Metodos {
 	 */
 
 	public static int mergeAndCount(double[] a, int left, int middle, int right) {// merge
-		int target = 4;
 		int count = 0; // Maintain a variable Count for the number of inversions, initialized to 0
 		int i = left, j = middle + 1, k = left; // Maintain a pointer into each subarray, pointing to the front elements
 		double[] current = new double[right - left + 1]; // Creamos el array auxiliar
@@ -109,7 +108,7 @@ public class Metodos {
 				a[k] = current[j - left];
 				j++;
 
-				if (current[i - left] == target) {// Solo cuenta la inversión si involucra el número objetivo
+				if (current[i - left] == 1 || current[i - left] == 2) {// Solo cuenta la inversión si involucra el número objetivo
 					count = count + (middle - left) + 1;
 				}
 			}

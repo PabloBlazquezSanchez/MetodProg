@@ -44,9 +44,9 @@ public class Metodos {
 	 * Este método se va a encargar de ordenar el array a apoyándose en un array
 	 * auxiliar del tamaño de la mitad que nos llega.
 	 * 
-	 * Entonces, en este se copia el contenido de a que se requiere ordenar. A
+	 * Entonces, en este se copia el contenido del que se requiere ordenar. A
 	 * partir de aquí se escribe en a el elemento más grande aplicándose inversiones
-	 * si fuese el de la mitad izquierda, hasta agotar la mitad izquierda del array,
+	 * si fuese el elemento de la mitad izquierda, hasta agotar la mitad izquierda del array,
 	 * para que así se pueda incluir la mitad derecha.
 	 * 
 	 * RELACIÓN DE RECURRENCIA PARA UN T(n):

@@ -33,7 +33,7 @@ import java.util.Scanner;
 
 	public static void openFile() {
 		try {
-			Scanner read = new Scanner(new File("prueba.dat"));
+			Scanner read = new Scanner(new File("InversionsHito1.dat"));
 			int nCases = read.nextInt(); // El primer valor es el número de casos
 			double[] a = new double[nCases];
 			for (int i = 0; i < nCases; i++) {
