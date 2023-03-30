@@ -1,10 +1,5 @@
 package CasoEstudio2;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.Scanner;
-
 /**
  * Esta clase contiene los métodos necesarios para contar el número de
  * inversiones usando el patrón divide y vencerás.
@@ -102,7 +97,7 @@ public class Metodos {
 			} else {
 				a[k] = current[j - left];
 				j++;
-				count = count + (middle - left) + 1;
+				count = count + (middle - i) + 1;
 			}
 			k++;
 		}

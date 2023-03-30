@@ -1,9 +1,5 @@
 package CasoEstudio2_Hito;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.Scanner;
 
 /**
  * Esta clase contiene los métodos necesarios para contar el número de
@@ -54,7 +50,11 @@ public class Metodos {
 	 * inversiones. Solo se actualiza la variable count si el número involucrado en
 	 * la inversión es igual al número objetivo.
 	 * 
-	 * RELACIÓN DE RECURRENCIA PARA UN T(n):
+	 * MODIFICACIÓN HITO: Para la modificación de este hito, hemos añadido 
+	 * 
+	 * RELACIÓN DE RECURRENCIA PARA UN T(n): Para la modificación que se nos ha pedido, en la parte del método de 
+	 * mergeAndCount, donde hacemos las inveriones en la parte del else, añadimos un if y vamos a comprobar que en 
+	 * el array hay un 1 o un 2 y si lo hay que conte las inversiones.
 	 * 
 	 * Para un array monodimensional, lo primero que hacemos en countInversions es
 	 * dividir el array, es decir, calcular la mitad de la longitud del mismo. Esta
@@ -107,9 +107,8 @@ public class Metodos {
 			} else {
 				a[k] = current[j - left];
 				j++;
-
-				if (current[i - left] == 1 || current[i - left] == 2) {// Solo cuenta la inversión si involucra el número objetivo
-					count = count + (middle - left) + 1;
+				if (a[i - left] == 2 || a[i - left] ==1) {// Solo cuenta la inversión si involucra el número objetivo
+					count = count + (middle - i) + 1;
 				}
 			}
 			k++;

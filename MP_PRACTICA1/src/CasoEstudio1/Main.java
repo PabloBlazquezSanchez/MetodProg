@@ -1,7 +1,5 @@
 package CasoEstudio1;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
 
 /**
  * Esta clase es la principal que se encarga de preguntar al usuario el valor
@@ -33,9 +31,3 @@ public class Main {
 
 }
 
-//Clase: MainPuebas
-//Metodo: pruebaEjemplo
-//Variable: persona
-
-//ERRORES:
-// Da error 99999

@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="dc.created" content="2023-03-23">
-<meta name="description" content="declaration: package: CasoEstudio2, class: Main">
+<meta name="description" content="declaration: package: CasoEstudio2_Hito, class: Main">
 <meta name="generator" content="javadoc/ClassWriterImpl">
 <link rel="stylesheet" type="text/css" href="../stylesheet.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../script-dir/jquery-ui.min.css" title="Style">
@@ -69,18 +69,17 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">CasoEstudio2</a></div>
+<div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">CasoEstudio2_Hito</a></div>
 <h1 title="Class Main" class="title">Class Main</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
-<div class="inheritance">CasoEstudio2.Main</div>
+<div class="inheritance">CasoEstudio2_Hito.Main</div>
 </div>
 <section class="class-description" id="class-description">
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Main</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
-<div class="block">Esta clase es la principal que se encarga de abrir el fichero y llamar a
- countInversions.</div>
+<div class="block">Esta clase es la principal que se encarga de abrir el fichero y llamar a countInversions.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -111,8 +110,8 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#main(java.lang.String%5B%5D)" class="member-name-link">main</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;args)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Este es el método principal donde se llamará al método openFile() para
- extraer los datos del fichero y almacenarlos en un array global b.</div>
+<div class="block">Este es el método principal donde se llamará al método openFile() para extraer los datos del fichero
+ y almacenarlos en un array global b.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#openFile()" class="member-name-link">openFile</a>()</code></div>
@@ -155,10 +154,9 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="main(java.lang.String[])">
 <h3>main</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">main</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;args)</span></div>
-<div class="block">Este es el método principal donde se llamará al método openFile() para
- extraer los datos del fichero y almacenarlos en un array global b.
- Posteriormente, se imprimirá por pantalla el resultado de llamar al método
- countInversions(b, 0, b.length - 1) situado en la clase Metodos.java.</div>
+<div class="block">Este es el método principal donde se llamará al método openFile() para extraer los datos del fichero
+ y almacenarlos en un array global b. Posteriormente, se imprimirá por pantalla el resultado de llamar
+ al método countInversions(b, 0, b.length - 1) situado en la clase Metodos.java.</div>
 </section>
 </li>
 <li>
@@ -166,7 +164,8 @@ loadScripts(document, 'script');</script>
 <h3>openFile</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">openFile</span>()</div>
 <div class="block">Este método se encarga de recorrer el fichero el cual se pasa como parámetro
- en la llamada. Una función característica del método es que va a detectar si
+ en la llamada. 
+ Una función característica del método es que va a detectar si
  el fichero se encuentra en el directorio. En caso afirmativo procederá a
  recorrerlo. En caso contrario saltará una excepción en la que notificará que
  el fichero no se encuentra en el directorio de búsqueda y finalizará el
