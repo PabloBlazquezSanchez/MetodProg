@@ -25,7 +25,7 @@ public class Metodos {
 			System.out.println("Sólo puede escribir números. Inténtelo de nuevo: ");
 			numero = filtrarNumero(); // Vuelve a solicitar el dato
 		}
-		lectura.close();
+		//lectura.close();
 		return numero;
 	}
 }
