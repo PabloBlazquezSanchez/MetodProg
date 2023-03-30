@@ -190,8 +190,7 @@ public class Metodos {
 				}
 			} while (comprobacion);
 			lectura.close();
-		} catch (InputMismatchException ime) { // Detecta si el dato introducido no es un número y lanza un mensaje de
-												// error
+		} catch (InputMismatchException ime) { // Detecta si el dato introducido no es un número y lanza un mensaje de error
 			System.out.println("Sólo puede escribir números. Inténtelo de nuevo: ");
 			numero = filtrarNumero(); // Vuelve a solicitar el dato
 		}

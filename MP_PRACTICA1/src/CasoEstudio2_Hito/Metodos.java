@@ -107,7 +107,7 @@ public class Metodos {
 			} else {
 				a[k] = current[j - left];
 				j++;
-				if (current[k - i] == 2 || current[k - left] ==1) {// Solo cuenta la inversión si involucra el número objetivo
+				if (current[left-i] == 2 || current[left-i] ==1) {// Solo cuenta la inversión si involucra el número objetivo
 					count = count + (middle - i) + 1;
 				}
 			}
