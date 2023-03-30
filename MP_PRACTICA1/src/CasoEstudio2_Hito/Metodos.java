@@ -100,14 +100,14 @@ public class Metodos {
 		double[] current = new double[right - left + 1]; // Creamos el array auxiliar
 		for (int f = left; f <= right; f++) // copiamos las dos mitades del array en el array auxiliar
 			current[f - left] = a[f];
-		while (i <= middle && j <= right) { // copia el siguiente elemento que sea más grande
+		while (i <= middle && j <= right) { // Copia el siguiente elemento que sea más grande
 			if (current[i - left] <= current[j - left]) {
 				a[k] = current[i - left];
 				i++;
 			} else {
 				a[k] = current[j - left];
 				j++;
-				if (a[i - left] == 2 || a[i - left] ==1) {// Solo cuenta la inversión si involucra el número objetivo
+				if (current[k - i] == 2 || current[k - left] ==1) {// Solo cuenta la inversión si involucra el número objetivo
 					count = count + (middle - i) + 1;
 				}
 			}

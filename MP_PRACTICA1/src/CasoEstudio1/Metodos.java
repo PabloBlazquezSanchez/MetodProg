@@ -188,9 +188,8 @@ public class Metodos {
 					System.out.println("Error. Introduce números mayores que 0:");
 					comprobacion = true;
 				}
-			lectura.close();
 			} while (comprobacion);
-
+			lectura.close();
 		} catch (InputMismatchException ime) { // Detecta si el dato introducido no es un número y lanza un mensaje de
 												// error
 			System.out.println("Sólo puede escribir números. Inténtelo de nuevo: ");
