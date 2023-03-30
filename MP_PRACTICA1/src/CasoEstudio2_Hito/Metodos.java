@@ -1,6 +1,5 @@
 package CasoEstudio2_Hito;
 
-
 /**
  * Esta clase contiene los métodos necesarios para contar el número de
  * inversiones usando el patrón divide y vencerás.
@@ -40,21 +39,22 @@ public class Metodos {
 	 * Este método se va a encargar de ordenar el array a apoyándose en un array
 	 * auxiliar del tamaño de la mitad que nos llega.
 	 * 
-	 * Entonces, en este se copia el contenido que se requiere ordenar. A
-	 * partir de aquí se escribe en a el elemento más grande aplicándose inversiones
-	 * si fuese el elemeento de la mitad izquierda, hasta agotar la mitad izquierda del array,
-	 * para que así se pueda incluir la mitad derecha.
+	 * Entonces, en este se copia el contenido que se requiere ordenar. A partir de
+	 * aquí se escribe en a el elemento más grande aplicándose inversiones si fuese
+	 * el elemeento de la mitad izquierda, hasta agotar la mitad izquierda del
+	 * array, para que así se pueda incluir la mitad derecha.
 	 * 
 	 * Ahora, el método mergeAndCount acepta un argumento adicional llamado target,
 	 * que representa el número específico para el cual deseas contar las
 	 * inversiones. Solo se actualiza la variable count si el número involucrado en
 	 * la inversión es igual al número objetivo.
 	 * 
-	 * MODIFICACIÓN HITO: Para la modificación de este hito, hemos añadido 
+	 * MODIFICACIÓN HITO: Para la modificación de este hito, hemos añadido
 	 * 
-	 * RELACIÓN DE RECURRENCIA PARA UN T(n): Para la modificación que se nos ha pedido, en la parte del método de 
-	 * mergeAndCount, donde hacemos las inveriones en la parte del else, añadimos un if y vamos a comprobar que en 
-	 * el array hay un 1 o un 2 y si lo hay que conte las inversiones.
+	 * RELACIÓN DE RECURRENCIA PARA UN T(n): Para la modificación que se nos ha
+	 * pedido, en la parte del método de mergeAndCount, donde hacemos las inveriones
+	 * en la parte del else, añadimos un if y vamos a comprobar que en el array hay
+	 * un 1 o un 2 y si lo hay que conte las inversiones.
 	 * 
 	 * Para un array monodimensional, lo primero que hacemos en countInversions es
 	 * dividir el array, es decir, calcular la mitad de la longitud del mismo. Esta
@@ -98,7 +98,7 @@ public class Metodos {
 		int count = 0; // Maintain a variable Count for the number of inversions, initialized to 0
 		int i = left, j = middle + 1, k = left; // Maintain a pointer into each subarray, pointing to the front elements
 		double[] current = new double[right - left + 1]; // Creamos el array auxiliar
-		for (int f = left; f <= right; f++) // copiamos las dos mitades del array en el array auxiliar
+		for (int f = left; f <= right; f++) // Copiamos las dos mitades del array en el array auxiliar
 			current[f - left] = a[f];
 		while (i <= middle && j <= right) { // Copia el siguiente elemento que sea más grande
 			if (current[i - left] <= current[j - left]) {
@@ -106,13 +106,14 @@ public class Metodos {
 				i++;
 			} else {
 				a[k] = current[j - left];
-				j++;
-				if (current[left-i] == 2 || current[left-i] ==1) {// Solo cuenta la inversión si involucra el número objetivo
+				if (current[j - left] == 2 || current[j - left] == 1) {// Solo cuenta la inversión si involucra el número objetivo
 					count = count + (middle - i) + 1;
 				}
+				j++;
 			}
 			k++;
 		}
+		
 		if (j - 1 == right) { // copia lo que queda del array de la primera mitad
 			while (i <= middle) {
 				a[k] = current[i - left];
@@ -120,7 +121,6 @@ public class Metodos {
 				i++;
 			}
 		}
-
 		return count;
 	}
 }
