@@ -22,7 +22,7 @@ public class Main {
 		}
 		
 		System.out.println("\n\nSOLUCION:");	
-		imprimirMatriz(resolverColocacion(tamanoSolar,tamanoBaldosas));
+		imprimirMatriz(Metodos.resolverColocacion(tamanoSolar,tamanoBaldosas));
 	}
 
 	private static void imprimirMatriz(int[][] resultadoMatriz) {
@@ -34,7 +34,5 @@ public class Main {
 		}
 	}
 
-	public static int [][] resolverColocacion(int tamanoSolar, int [] tamanosBaldosas){
-		return null;
-	}
+	
 }

@@ -28,4 +28,8 @@ public class Metodos {
 		//lectura.close();
 		return numero;
 	}
+	
+	public static int [][] resolverColocacion(int tamanoSolar, int [] tamanosBaldosas){
+		return null;
+	}
 }
