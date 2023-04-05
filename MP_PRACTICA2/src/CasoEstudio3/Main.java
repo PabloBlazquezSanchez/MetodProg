@@ -4,7 +4,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		System.out.println("Introduce el valor de N para cacular el tamaño del solar de dimensiones NxN:");
-		int tamanoSolar=Metodos.filtrarNumero();
+		int tamSolar=Metodos.filtrarNumero();
 		System.out.println("Introduce el número de baldosas diferentes: ");
 		int[] tamanoBaldosas = new int[Metodos.filtrarNumero()];
 		
@@ -15,14 +15,14 @@ public class Main {
 		}
 		
 		System.out.println("\n\nDATOS INTRODUCIDOS:");
-		System.out.println("Tamaño del solar: "+tamanoSolar+" x "+tamanoSolar);
+		System.out.println("Tamaño del solar: "+tamSolar+" x "+tamSolar);
 		System.out.println("Tipos de baldosas distintas: "+tamanoBaldosas.length);
 		for(int i=0; i<tamanoBaldosas.length;i++){
 			System.out.println("\tBalsosa "+(i+1)+": "+tamanoBaldosas[i] +"x"+tamanoBaldosas[i]);
 		}
 		
 		System.out.println("\n\nSOLUCION:");	
-		imprimirMatriz(Metodos.resolverColocacion(tamanoSolar,tamanoBaldosas));
+		imprimirMatriz(Metodos.resolverColocacion(tamSolar,tamanoBaldosas));
 	}
 
 	private static void imprimirMatriz(int[][] resultadoMatriz) {

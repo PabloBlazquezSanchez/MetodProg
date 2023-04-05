@@ -29,7 +29,9 @@ public class Metodos {
 		return numero;
 	}
 	
-	public static int [][] resolverColocacion(int tamanoSolar, int [] tamanosBaldosas){
-		return null;
+	public static int [][] resolverColocacion(int tamSolar, int [] tamanosBaldosas){
+		int resultado[][] = new int[tamSolar][tamSolar];
+
+		return resultado;
 	}
 }
