@@ -183,7 +183,6 @@ public class Metodos {
 			do {
 				comprobacion = false;
 				numero = lectura.nextLong();
-
 				if (numero <= 0) {
 					System.out.println("Error. Introduce números mayores que 0:");
 					comprobacion = true;
