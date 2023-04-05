@@ -6,23 +6,23 @@ public class Main {
 		System.out.println("Introduce el valor de N para cacular el tamaño del solar de dimensiones NxN:");
 		int tamSolar=Metodos.filtrarNumero();
 		System.out.println("Introduce el número de baldosas diferentes: ");
-		int[] tamanoBaldosas = new int[Metodos.filtrarNumero()];
+		int[] tamBaldosas = new int[Metodos.filtrarNumero()];
 		
 		System.out.println("Introduzca el tamaño de las baldosas ordenadas de mayor a menor");
-		for (int i=0;i<tamanoBaldosas.length;i++) {
+		for (int i=0;i<tamBaldosas.length;i++) {
 			System.out.println("Escribe el tamaño del tipo de baldosa "+(i+1)+" de dimensiones NxN:");
-			tamanoBaldosas[i]=Metodos.filtrarNumero();
+			tamBaldosas[i]=Metodos.filtrarNumero();
 		}
 		
 		System.out.println("\n\nDATOS INTRODUCIDOS:");
 		System.out.println("Tamaño del solar: "+tamSolar+" x "+tamSolar);
-		System.out.println("Tipos de baldosas distintas: "+tamanoBaldosas.length);
-		for(int i=0; i<tamanoBaldosas.length;i++){
-			System.out.println("\tBalsosa "+(i+1)+": "+tamanoBaldosas[i] +"x"+tamanoBaldosas[i]);
+		System.out.println("Tipos de baldosas distintas: "+tamBaldosas.length);
+		for(int i=0; i<tamBaldosas.length;i++){
+			System.out.println("\tBalsosa "+(i+1)+": "+tamBaldosas[i] +"x"+tamBaldosas[i]);
 		}
 		
 		System.out.println("\n\nSOLUCION:");	
-		imprimirMatriz(Metodos.resolverColocacion(tamSolar,tamanoBaldosas));
+		imprimirMatriz(Metodos.resolverColocacion(tamSolar,tamBaldosas));
 	}
 
 	private static void imprimirMatriz(int[][] resultadoMatriz) {
