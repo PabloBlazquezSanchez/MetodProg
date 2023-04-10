@@ -1,5 +1,6 @@
 package CasoEstudio3;
 
+import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -25,13 +26,22 @@ public class Metodos {
 			System.out.println("Sólo puede escribir números. Inténtelo de nuevo: ");
 			numero = filtrarNumero(); // Vuelve a solicitar el dato
 		}
-		//lectura.close();
+		// lectura.close();
 		return numero;
 	}
-	
-	public static int [][] resolverColocacion(int tamSolar, int [] tamBaldosas){
-		int resultado[][] = new int[tamSolar][tamSolar];
 
+	public static int[] ordenarArray(int[] tamanosBaldosas) {
+		Arrays.sort(tamanosBaldosas);
+		for (int i = 0, j = tamanosBaldosas.length - 1, tmp; i < j; i++, j--) {
+			tmp = tamanosBaldosas[i];
+			tamanosBaldosas[i] = tamanosBaldosas[j];
+			tamanosBaldosas[j] = tmp;
+		}
+		return tamanosBaldosas;
+	}
+
+	public static int[][] resolverColocacion(int tamSolar, int[] tamBaldosas) {
+		int resultado[][] = new int[tamSolar][tamSolar];
 		return resultado;
 	}
 }
