@@ -27,7 +27,7 @@ public class Metodos {
 			System.out.println("Sólo puede escribir números. Inténtelo de nuevo: ");
 			numero = filtrarNumero(); // Vuelve a solicitar el dato
 		}
-		// lectura.close();
+		//lectura.close();
 		return numero;
 	}
 
@@ -40,52 +40,41 @@ public class Metodos {
 		}
 		return tamanosBaldosas;
 	}
-	
+
 	/*
-	 * Algorithm tileFloor (tiles, n)
-	 * current = 0
-	 * set empty solution
-	 * sort tiles in decreasing order
-	 * while there is room for whole tiles do
-	 * if room for size tile(current) then
-	 * 		place tile of size tile(current)
-	 * 		reduce available floor surface
-	 * 		add one tile of size tile(current) to solution
-	 * else
-	 * 		current = current +1
-	 * end_if
+	 * Algorithm tileFloor (tiles, n) current = 0 set empty solution sort tiles in
+	 * decreasing order while there is room for whole tiles do if room for size
+	 * tile(current) then place tile of size tile(current) reduce available floor
+	 * surface add one tile of size tile(current) to solution else current = current
+	 * +1 end_if
 	 * 
-	 * end_while
-	 * return solution
+	 * end_while return solution
 	 */
 
 	public static int[][] resolverColocacion(int tamSolar, int[] tamBaldosas) {
-		int current = 0;
-		int lado = tamSolar;
+		int size = tamSolar;
 		int actual = 0;
 		int tamano = tamBaldosas[actual];
-		int resultado[][] = new int[tamSolar][tamSolar];
-		for (int i = 0; i < resultado.length; i++) {
-			for (int j = 0; j < resultado[i].length; j++) {
-				while (resultado[i][j] == 0 && actual <= tamBaldosas.length - 1) {
+		int floor[][] = new int[tamSolar][tamSolar];
+		
+		for (int i = 0; i < size; i++) {
+			for (int j = 0; j < size; j++) {
+				while (floor[i][j] == 0 && actual <= tamBaldosas.length - 1) {
 					tamano = tamBaldosas[actual];
-					if (cabeBaldosa(tamano, i, j, resultado, lado)) {
+					if (cabeBaldosa(tamano, i, j, floor, size)) {
 						for (int f = i; f < i + tamano; f++) {
 							for (int c = j; c < j + tamano; c++) {
-								resultado[f][c] = tamano;
+								floor[f][c] = tamano;
 							}
 						}
-						//puestas[actual]++;
-					}else {
+						// puestas[actual]++;
+					} else {
 						actual++;
 					}
 				}
 			}
 		}
-		while (current < resultado.length - 1) {
-
-		}
-		return resultado;
+		return floor;
 	}
 
 	private static boolean cabeBaldosa(int tamano, int i, int j, int[][] resultado, int lado) {

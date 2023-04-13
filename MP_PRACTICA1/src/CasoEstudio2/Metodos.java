@@ -108,8 +108,6 @@ public class Metodos {
 				i++;
 			}
 		}
-
 		return count;
 	}
-
 }
