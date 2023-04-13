@@ -78,7 +78,16 @@ public class Metodos {
 	}
 
 	private static boolean cabeBaldosa(int tamano, int i, int j, int[][] resultado, int lado) {
-		// TODO Auto-generated method stub
+		boolean cabe = i + tamano <= lado && j +tamano <= lado;
+			if (cabe) {
+				for (int fila = i; cabe && fila < i+tamano; fila++) {
+					for (int columna = j; cabe && columna < j+tamano; columna++) {
+						if (resultado [fila][columna] != 0) {
+							cabe=false;
+						}
+					}
+				}
+			}
 		return false;
 	}
 }
