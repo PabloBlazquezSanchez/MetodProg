@@ -47,7 +47,7 @@ public class Main {
 			System.out.println("El fichero no existe en el directorio de búsqueda.\n"
 					+ "El programa no puede continuar ejecutándose. Fin del Programa.");
 			System.exit(0); // Finaliza el programa
-		} catch (IOException e) { // Detecta otros errores
+		} catch (@SuppressWarnings("hiding") IOException e) { // Detecta otros errores
 			e.printStackTrace();
 		}
 	}
