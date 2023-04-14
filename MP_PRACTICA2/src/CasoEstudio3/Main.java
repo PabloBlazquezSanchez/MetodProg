@@ -1,17 +1,33 @@
 package CasoEstudio3;
 
 /**
- * Es la clase principal del programa donde se encarga de interactuar con el
- * usuario, preguntando los detalles del solar, así como el número de baldosas
- * distintas que se van a utilizar junto con sus dimensiones. Además, imprime la
- * solución dada por el algoritmo o en caso de que no sea posible encontrarla
+ * Es la clase principal del programa encargada de interactuar con el usuario,
+ * es decir, de pedirle los detalles del solar y el número de baldosas distintas
+ * que se van a utilizar junto con sus dimensiones. Luego, utiliza el algoritmo
+ * correspondiente para encontrar la solución y la imprime en la consola. En
+ * caso de que no sea posible encontrar una solución, la clase principal
  * mostrará un mensaje de error.
  */
 public class Main {
 
 	/**
-	 * 
+	 * Este es el método principal de la clase donde se realiza la interacción con
+	 * el usuario para pedirle los detalles del solar y las baldosas a utilizar. En
+	 * primer lugar, se pide al usuario el tamaño del solar mediante la función
+	 * filtrarNumero() de la clase Metodos. Luego, se pide el número de baldosas
+	 * distintas y sus dimensiones mediante un bucle for que solicita el tamaño de
+	 * cada tipo de baldosa. Después de que el usuario haya introducido todos los
+	 * datos, se muestran un resumen de los datos introducidos y se ordena el array
+	 * de tamaños de baldosas de menor a mayor mediante la función ordenarArray() de
+	 * la clase Metodos. Finalmente, se resuelve la colocación de las baldosas en el
+	 * solar mediante la función resolverColocacion() de la clase Metodos, y se
+	 * comprueba si la solución es válida mediante la función comprobacion(). Si la
+	 * solución es válida, se imprime en consola mediante la función
+	 * imprimirResultado(). En caso de que no se pueda encontrar una solución, no se
+	 * imprimirá nada en consola. Se utiliza Metodos.lectura.close() para cerrar el
+	 * objeto de lectura de datos en la clase Metodos después de haberlo utilizado.
 	 *
+	 * 
 	 * @param args Argumentos del programa
 	 */
 	public static void main(String[] args) {
@@ -43,10 +59,19 @@ public class Main {
 	}
 
 	/**
-	 * Comprobacion.
+	 * Este método se encarga de comprobar si la solución encontrada para la
+	 * colocación de las baldosas en el solar es válida o no. Para ello, recorre la
+	 * matrizResultado mediante dos bucles for. Si en algún momento encuentra una
+	 * celda con valor 0, significa que no se ha logrado colocar todas las baldosas
+	 * en el solar y la solución no es válida. En este caso, se muestra un mensaje
+	 * de error en la consola indicando que no se ha completado el solar y se
+	 * establece la variable correcto a false.
 	 *
-	 * @param matrizResultado Matriz bidimensional con la solución dada por el algoritmo
-	 * @return true, if successful
+	 * 
+	 * @param matrizResultado Matriz bidimensional con la solución dada por el
+	 *                        algoritmo
+	 * @return true Si todos los elementos de la matriz tienen un valor distinto de
+	 *         0
 	 */
 	public static boolean comprobacion(int[][] matrizResultado) {
 		boolean correcto = true;
@@ -71,7 +96,8 @@ public class Main {
 	 * al final de una fila, se utiliza la función System.out.println() para
 	 * imprimir un salto de línea y así pasar a la siguiente fila.
 	 *
-	 * @param resultadoMatriz Matriz bidimensional con la solución dada por el algoritmo
+	 * @param resultadoMatriz Matriz bidimensional con la solución dada por el
+	 *                        algoritmo
 	 */
 	private static void imprimirResultado(int[][] resultadoMatriz) {
 		for (int i = 0; i < resultadoMatriz.length; i++) {
