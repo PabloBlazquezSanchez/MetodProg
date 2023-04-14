@@ -4,15 +4,15 @@ import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class Metodos. El algoritmo no es óptimo. Por ejemplo, si tenemos un
- * solar de 4 metros y baldosas de tamaños 3, 2 y 1 metros, el algoritmo pondrá
- * una baldosa de 3x3 y quedarán 7 huecos para baldosas de 1x1 (tres huecos
- * estarán distribuidos horizontalmente y los otros cuatro lo estarán
- * verticalmente), esto haría que en total se tuviesen que utilizar 7 baldosas.
- * Lo optimo hubiese sido que se hubiesen usado cuatro baldosas de 2x2, ya que
- * en total se hubiesen cuatro baldosas.
+ * Esta clase contiene los métodos necesarios para la implementación del
+ * algoritmo voraz que nos permita resolver el problema. El algoritmo no es
+ * óptimo. Por ejemplo, si tenemos un solar de 4 metros y baldosas de tamaños 3,
+ * 2 y 1 metros, el algoritmo pondrá una baldosa de 3x3 y quedarán 7 huecos para
+ * baldosas de 1x1 (tres huecos estarán distribuidos horizontalmente y los otros
+ * cuatro lo estarán verticalmente), esto haría que en total se tuviesen que
+ * utilizar 7 baldosas. Lo optimo hubiese sido que se hubiesen usado cuatro
+ * baldosas de 2x2, ya que en total se hubiesen cuatro baldosas.
  */
 public class Metodos {
 
@@ -57,15 +57,16 @@ public class Metodos {
 	}
 
 	/**
-	 * Este método ordena un array de enteros de manera descendente.
-	 * Primero, se utiliza el método sort de Arrays para ordenar el array de menor a
-	 * mayor. Después, se intercambian los elementos del array, empezando por los
-	 * extremos (el primero con el último, el segundo con el penúltimo, y así
-	 * sucesivamente) hasta llegar al centro, utilizando un bucle for.
+	 * Este método ordena un array de enteros de manera descendente. Primero, se
+	 * utiliza el método sort de Arrays para ordenar el array de menor a mayor.
+	 * Después, se intercambian los elementos del array, empezando por los extremos
+	 * (el primero con el último, el segundo con el penúltimo, y así sucesivamente)
+	 * hasta llegar al centro, utilizando un bucle for.
 	 * 
 	 *
 	 * @param tamanosBaldosas Array con los tamaños de las baldosas sin ordenar
-	 * @return tamanosBaldosas Array con los tamaños de las baldosas ordenado de manera descendente
+	 * @return tamanosBaldosas Array con los tamaños de las baldosas ordenado de
+	 *         manera descendente
 	 */
 	public static int[] ordenarArray(int[] tamanosBaldosas) {
 		Arrays.sort(tamanosBaldosas);
@@ -121,14 +122,22 @@ public class Metodos {
 	}
 
 	/**
-	 * Cabe baldosa.
+	 * Este método verifica si es posible colocar una baldosa en una posición dada
+	 * dentro de la matriz resultado. Primero, se verifica que la baldosa no se
+	 * salga del solar. Si esto sucede, se devuelve false, indicando que no cabe la
+	 * baldosa. Luego, se recorren las casillas de la submatriz donde se intentará
+	 * colocar la baldosa, verificando que todas estén libres (su valor en la matriz
+	 * resultado es 0). Si alguna de ellas ya tiene una baldosa colocada, se
+	 * devuelve false. Si se recorren todas las casillas sin encontrar ninguna
+	 * ocupada, se devuelve true, indicando que cabe la baldosa en esa posición.
 	 *
-	 * @param tamano    the tamano
-	 * @param i         the i
-	 * @param j         the j
-	 * @param resultado the resultado
-	 * @param lado      the lado
-	 * @return true, if successful
+	 * 
+	 * @param tamano    Tamaño de la baldosa a colocar
+	 * @param i         Coordenada 'x' donde se intentará colocar la baldosa
+	 * @param j         Coordenada 'y' donde se intentará colocar la baldosa
+	 * @param resultado Representa el estado actual del solar
+	 * @param lado      Tamaño del lado del solar.
+	 * @return true - Si cabe la baldosa en esa posición
 	 */
 	private static boolean cabeBaldosa(int tamano, int i, int j, int[][] resultado, int lado) {
 		boolean cabe = false;
