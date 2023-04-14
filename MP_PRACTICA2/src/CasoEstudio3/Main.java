@@ -70,7 +70,7 @@ public class Main {
 	 * 
 	 * @param matrizResultado Matriz bidimensional con la solución dada por el
 	 *                        algoritmo
-	 * @return true Si todos los elementos de la matriz tienen un valor distinto de
+	 * @return true - Si todos los elementos de la matriz tienen un valor distinto de
 	 *         0
 	 */
 	public static boolean comprobacion(int[][] matrizResultado) {

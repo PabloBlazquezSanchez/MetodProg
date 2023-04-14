@@ -6,19 +6,22 @@ import java.util.Scanner;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class Metodos. El algoritmo no es óptimo. Por ejemplo, si
- * tenemos un solar de 4 metros y baldosas de tamaños 3, 2 y 1 metros, el
- * algoritmo pondrá una baldosa de 3x3 y quedarán 7 huecos para baldosas de 1x1
- * (tres huecos estarán distribuidos horizontalmente y los otros cuatro lo
- * estarán verticalmente), esto haría que en total se tuviesen que utilizar 7
- * baldosas. Lo optimo hubiese sido que se hubiesen usado cuatro baldosas de
- * 2x2, ya que en total se hubiesen cuatro baldosas.
+ * The Class Metodos. El algoritmo no es óptimo. Por ejemplo, si tenemos un
+ * solar de 4 metros y baldosas de tamaños 3, 2 y 1 metros, el algoritmo pondrá
+ * una baldosa de 3x3 y quedarán 7 huecos para baldosas de 1x1 (tres huecos
+ * estarán distribuidos horizontalmente y los otros cuatro lo estarán
+ * verticalmente), esto haría que en total se tuviesen que utilizar 7 baldosas.
+ * Lo optimo hubiese sido que se hubiesen usado cuatro baldosas de 2x2, ya que
+ * en total se hubiesen cuatro baldosas.
  */
 public class Metodos {
 
-	/** The lectura. */
+	/**
+	 * Objeto de la clase Scanner que se utiliza para leer la entrada de datos desde
+	 * la consola del usuario.
+	 */
 	static Scanner lectura = new Scanner(System.in);
-	
+
 	/**
 	 * 
 	 * Este método captura el dato introducido por teclado y analiza si se ha
@@ -30,7 +33,7 @@ public class Metodos {
 	 * 
 	 * @return numero El número escrito por el usuario
 	 */
-	
+
 	public static int filtrarNumero() {
 		int numero = 0;
 		boolean comprobacion;
@@ -54,10 +57,15 @@ public class Metodos {
 	}
 
 	/**
-	 * Ordenar array.
+	 * Este método ordena un array de enteros de manera descendente.
+	 * Primero, se utiliza el método sort de Arrays para ordenar el array de menor a
+	 * mayor. Después, se intercambian los elementos del array, empezando por los
+	 * extremos (el primero con el último, el segundo con el penúltimo, y así
+	 * sucesivamente) hasta llegar al centro, utilizando un bucle for.
+	 * 
 	 *
-	 * @param tamanosBaldosas the tamanos baldosas
-	 * @return the int[]
+	 * @param tamanosBaldosas Array con los tamaños de las baldosas sin ordenar
+	 * @return tamanosBaldosas Array con los tamaños de las baldosas ordenado de manera descendente
 	 */
 	public static int[] ordenarArray(int[] tamanosBaldosas) {
 		Arrays.sort(tamanosBaldosas);
