@@ -2,15 +2,14 @@ package CasoEstudio3;
 
 import java.util.Arrays;
 import java.util.InputMismatchException;
-import java.util.Iterator;
 import java.util.Scanner;
 
 public class Metodos {
+static Scanner lectura = new Scanner(System.in);
 
 	public static int filtrarNumero() {
 		int numero = 0;
 		boolean comprobacion;
-		Scanner lectura = new Scanner(System.in);
 		try {
 			do {
 				comprobacion = false;
@@ -27,7 +26,6 @@ public class Metodos {
 			System.out.println("Sólo puede escribir números. Inténtelo de nuevo: ");
 			numero = filtrarNumero(); // Vuelve a solicitar el dato
 		}
-		//lectura.close();
 		return numero;
 	}
 
@@ -56,7 +54,7 @@ public class Metodos {
 		int actual = 0;
 		int tamano = tamBaldosas[actual];
 		int floor[][] = new int[tamSolar][tamSolar];
-		
+
 		for (int i = 0; i < size; i++) {
 			for (int j = 0; j < size; j++) {
 				while (floor[i][j] == 0 && actual <= tamBaldosas.length - 1) {
@@ -78,16 +76,18 @@ public class Metodos {
 	}
 
 	private static boolean cabeBaldosa(int tamano, int i, int j, int[][] resultado, int lado) {
-		boolean cabe = i + tamano <= lado && j +tamano <= lado;
-			if (cabe) {
-				for (int fila = i; cabe && fila < i+tamano; fila++) {
-					for (int columna = j; cabe && columna < j+tamano; columna++) {
-						if (resultado [fila][columna] != 0) {
-							cabe=false;
-						}
+		boolean cabe = false;
+		if (i + tamano <= lado && j + tamano <= lado) { // primero verifico que la baldosa esté dentro del solar
+			cabe = true;
+			for (int f = i; cabe && f < i + tamano; f++) {
+				for (int c = j; cabe && c < j + tamano; c++) {
+					if (resultado[f][c] != 0) {
+						cabe = false; // miro que todas casillas candidatas estén libres. En el momento que una no lo
+										// esté, no cabe (condición extra de parada)
 					}
 				}
 			}
-		return false;
+		}
+		return cabe;
 	}
 }

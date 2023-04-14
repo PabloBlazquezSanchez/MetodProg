@@ -12,6 +12,7 @@ public class Main {
 			System.out.println("Escribe el tamaño del tipo de baldosa " + (i + 1) + " de dimensiones NxN:");
 			tamBaldosas[i] = Metodos.filtrarNumero();
 		}
+		Metodos.lectura.close();
 
 		System.out.println("\n\nDATOS INTRODUCIDOS:");
 		System.out.println("Tamaño del solar: " + tamSolar + " x " + tamSolar);
@@ -21,10 +22,28 @@ public class Main {
 		}
 		Metodos.ordenarArray(tamBaldosas);
 		System.out.println("\n\nSOLUCION:");
-		imprimirMatriz(Metodos.resolverColocacion(tamSolar, tamBaldosas));
+		int[][] solucion = Metodos.resolverColocacion(tamSolar, tamBaldosas);
+		if (comprobacion(solucion)) {
+			imprimirResultado(solucion);
+		}
+		// imprimirResultado(Metodos.resolverColocacion(tamSolar, tamBaldosas));
 	}
 
-	private static void imprimirMatriz(int[][] resultadoMatriz) {
+	public static boolean comprobacion(int[][] matrizResultado) {
+		boolean correcto = true;
+		for (int i = 0; i < matrizResultado.length && correcto; i++) {
+			for (int j = 0; j < matrizResultado[i].length && correcto; j++) {
+				if (matrizResultado[i][j] == 0) {
+					System.out.println("No se ha completado el solar por lo que el resultado es imposible.\n"
+							+ "Finalizando el programa por imposibilidad de resolución.");
+					correcto = false;
+				}
+			}
+		}
+		return correcto;
+	}
+
+	private static void imprimirResultado(int[][] resultadoMatriz) {
 		for (int i = 0; i < resultadoMatriz.length; i++) {
 			for (int j = 0; j < resultadoMatriz[i].length; j++) {
 				System.out.print(resultadoMatriz[i][j] + " ");
