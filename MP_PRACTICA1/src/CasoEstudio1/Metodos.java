@@ -1,5 +1,5 @@
 package CasoEstudio1;
-
+/// RECOMENDACION: IMPRIMIR LAS COSAS EN EL MAIN
 import java.util.InputMismatchException;
 import java.util.Scanner;
 

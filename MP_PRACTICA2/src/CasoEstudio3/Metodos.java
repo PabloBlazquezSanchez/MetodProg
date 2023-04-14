@@ -4,9 +4,33 @@ import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Metodos. El algoritmo no es óptimo. Por ejemplo, si
+ * tenemos un solar de 4 metros y baldosas de tamaños 3, 2 y 1 metros, el
+ * algoritmo pondrá una baldosa de 3x3 y quedarán 7 huecos para baldosas de 1x1
+ * (tres huecos estarán distribuidos horizontalmente y los otros cuatro lo
+ * estarán verticalmente), esto haría que en total se tuviesen que utilizar 7
+ * baldosas. Lo optimo hubiese sido que se hubiesen usado cuatro baldosas de
+ * 2x2, ya que en total se hubiesen cuatro baldosas.
+ */
 public class Metodos {
-static Scanner lectura = new Scanner(System.in);
 
+	/** The lectura. */
+	static Scanner lectura = new Scanner(System.in);
+	
+	/**
+	 * 
+	 * Este método captura el dato introducido por teclado y analiza si se ha
+	 * introducido un caracter o un número. Si se introduce un caracter lanza un
+	 * mensaje de error y pide al usuario introducir un número positivo, a través de
+	 * la excepción incluida en la API de Java "Input Mismatch Exception". Lo mismo
+	 * ocurre si el número introducido es igual o menor a cero, aunque en este caso
+	 * concreto no aparecerá la excepción.
+	 * 
+	 * @return numero El número escrito por el usuario
+	 */
+	
 	public static int filtrarNumero() {
 		int numero = 0;
 		boolean comprobacion;
@@ -29,6 +53,12 @@ static Scanner lectura = new Scanner(System.in);
 		return numero;
 	}
 
+	/**
+	 * Ordenar array.
+	 *
+	 * @param tamanosBaldosas the tamanos baldosas
+	 * @return the int[]
+	 */
 	public static int[] ordenarArray(int[] tamanosBaldosas) {
 		Arrays.sort(tamanosBaldosas);
 		for (int i = 0, j = tamanosBaldosas.length - 1, tmp; i < j; i++, j--) {
@@ -49,6 +79,13 @@ static Scanner lectura = new Scanner(System.in);
 	 * end_while return solution
 	 */
 
+	/**
+	 * Resolver colocacion.
+	 *
+	 * @param tamSolar    the tam solar
+	 * @param tamBaldosas the tam baldosas
+	 * @return the int[][]
+	 */
 	public static int[][] resolverColocacion(int tamSolar, int[] tamBaldosas) {
 		int size = tamSolar;
 		int actual = 0;
@@ -75,6 +112,16 @@ static Scanner lectura = new Scanner(System.in);
 		return floor;
 	}
 
+	/**
+	 * Cabe baldosa.
+	 *
+	 * @param tamano    the tamano
+	 * @param i         the i
+	 * @param j         the j
+	 * @param resultado the resultado
+	 * @param lado      the lado
+	 * @return true, if successful
+	 */
 	private static boolean cabeBaldosa(int tamano, int i, int j, int[][] resultado, int lado) {
 		boolean cabe = false;
 		if (i + tamano <= lado && j + tamano <= lado) { // primero verifico que la baldosa esté dentro del solar
