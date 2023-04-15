@@ -79,20 +79,43 @@ public class Metodos {
 	}
 
 	/*
-	 * Algorithm tileFloor (tiles, n) current = 0 set empty solution sort tiles in
-	 * decreasing order while there is room for whole tiles do if room for size
-	 * tile(current) then place tile of size tile(current) reduce available floor
-	 * surface add one tile of size tile(current) to solution else current = current
-	 * +1 end_if
+	 * El siguiente método es el corazón de nuestro programa, el algoritmo de la
+	 * resolución de la colocación de baldosas en el solar. A este método le pasamos
+	 * el lado de nuestro solar cuadrado y el array ordenado (orden decreciente) de
+	 * los tamaños de baldosas. Lo primero que hará el método será hacer una copia
+	 * del lado del solar, para usarla en diferentes bucles y como argumento para el
+	 * método cabeBaldosa. También se define un entero de índice actual de tamaño de
+	 * baldosa, en conjunto con la variable que guarda el tamaño de la baldosa, en
+	 * función de la posición actual (proveniente del array). Por último se crea una
+	 * matriz bidimensional, que será la solución a nuestro problema: floor o suelo.
+	 * Su tamaño será el lado del solar en x e y (tamSolar^2)
 	 * 
-	 * end_while return solution
-	 */
-
-	/**
-	 * Resolver colocacion.
+	 * Una vez se han inicializado las variables anteriores, el algoritmo recorrerá
+	 * el suelo del solar, usando dos bucles for. Mientras que la coordenada ij del
+	 * solar no esté ocupada (representada con un 0) y la baldosa actual
+	 * seleccionada esté dentro del array del tamaño de las baldosas, redefinimos el
+	 * tamaño de la baldosa. Esto lo hacemos para comprobar en este momento si la
+	 * baldosa cabe en la posición actual del solar (ver método cabeBaldosa).
+	 * 
+	 * De ser así, a través de otros dos bucles for, estableceremos con el número
+	 * del tamaño de baldosa la baldosa, ocupando así su en el solar. Nótese que
+	 * estos dos for recorren únicamente la longitud del tamaño de baldosa
+	 * correspondiente, empezando desde las coordenadas determinadas por i y j (fila
+	 * y columna). Si no cabe, pasamos a un tamaño de baldosa menor, representado
+	 * como un aumento de la posición actual del array de baldosas. Esté método
+	 * cuando finalice devolverá la matriz solución.
+	 * 
+	 * --COMPLEJIDAD--
+	 * 
+	 * La complejidad de este algoritmo depende principalmente del lado del solar,
+	 * sin despreciar los diferentes tamaños de baldosa que se introduzcan. Por
+	 * ello, empleando notación Big-Theta, el algoritmo posee una complejidad de
+	 * O(n^2).
 	 *
-	 * @param tamSolar    the tam solar
+	 * @param tamSolar the tam solar
+	 * 
 	 * @param tamBaldosas the tam baldosas
+	 * 
 	 * @return the int[][]
 	 */
 	public static int[][] resolverColocacion(int tamSolar, int[] tamBaldosas) {
@@ -111,7 +134,6 @@ public class Metodos {
 								floor[f][c] = tamano;
 							}
 						}
-						// puestas[actual]++;
 					} else {
 						actual++;
 					}
