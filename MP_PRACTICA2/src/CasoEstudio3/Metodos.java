@@ -78,7 +78,7 @@ public class Metodos {
 		return tamanosBaldosas;
 	}
 
-	/*
+	/**
 	 * El siguiente método es el corazón de nuestro programa, el algoritmo de la
 	 * resolución de la colocación de baldosas en el solar. A este método le pasamos
 	 * el lado de nuestro solar cuadrado y el array ordenado (orden decreciente) de
