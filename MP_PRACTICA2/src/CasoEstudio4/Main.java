@@ -1,7 +1,7 @@
 package CasoEstudio4;
 
 /**
- * The Class Jesús.
+ * The Class Espa�a.
  */
 public class Main {
 	
@@ -17,9 +17,9 @@ public class Main {
 		for (int i = 0; i < bec.length; i++) {
 			if (bec[i] == 1) {
 				totalDinero += becas[i].getDinero();
-				System.out.println("Beca " + becas[i].getId() + ": €" + becas[i].getDinero());
+				System.out.println("Beca " + becas[i].getId() + ": " + becas[i].getDinero()+"");
 			}
 		}
-		System.out.println("Total dinero obtenido: €" + totalDinero);
+		System.out.println("Total dinero obtenido: " + totalDinero+"");
 	}
 }

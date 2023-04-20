@@ -1,7 +1,7 @@
 package CasoEstudio4;
 
 /**
- * The Class Beca.
+ * The Class España1.
  */
 public class Beca {
 	
