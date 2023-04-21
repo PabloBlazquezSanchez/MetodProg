@@ -72,7 +72,7 @@ public class Metodos {
 			System.out.println("El fichero no existe en el directorio de búsqueda.\n"
 					+ "El programa no puede continuar ejecutándose. Fin del Programa.");
 			System.exit(0); // Finaliza el programa
-		} catch (@SuppressWarnings("hiding") IOException e) { // Detecta otros errores
+		} catch (IOException e) { // Detecta otros errores
 			System.out.println("El programa no puede continuar ejecutándose. Fin del Programa.");
 			System.exit(0); // Finaliza el programa
 		} catch (NumberFormatException e) {
