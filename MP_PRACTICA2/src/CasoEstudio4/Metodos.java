@@ -11,8 +11,17 @@ import java.io.IOException;
 public class Metodos {
 
 	/**
-	 * Calcular mejor solucion.
-	 *
+	 * El objetivo de este método es buscar la mejor solución que existe.
+	 * 
+	 * Para calcular mejorSolucion, creamos una método estático array de tipo entero, lo primero que vamos hacer es 
+	 * crear un array becas de tipo Beca en el cual le pasamos el método de LeerFichero, creamos otro array solucion 
+	 * de tipo entero el cual esta inicializado con la longitud del array becas.
+	 * 
+	 * Llamamos al método de seleccion a la cual le pasamos la longitud del array, el array solucion, el nivel y 
+	 * el array becas. 
+	 * 
+	 * Y para finalizar el método retornamos el array solucion.
+	 * 
 	 * @return the int[]
 	 */
 	public static int[] mejorSolucion() {
@@ -85,7 +94,22 @@ public class Metodos {
 
 	/**
 	 * Checks if is compatible.
-	 *
+	 * 
+	 * El objetivo de este método es saber si becaProv es compatible con las becas que se encuentran en el array becas.
+	 * 
+	 * Para ello vamos a crear un método estactico esCompatible de tipo booleano en el cual le pasamos la variable 
+	 * becaProv de tipo Beca, un array x tipo entero, una variable level de tipo entero y un array becas de tipo Beca.
+	 * 
+	 * Dentro del método vamos a crear una variable comp de tipo booleano inicializado a true, como podemos ver después 
+	 * cremos un bucle for en el que vamos a recorrer todos los elementos del array x hasta el indice level. Dentro del bucle 
+	 * vamos a crear otro bucle interno pero de tipo if en el cual vamos a comparar todas las posiciones del array x con 1,
+	 * es decir,  si la posicion que actualmente se esta comparando  es igual a 1 se selecciona esa beca y si es asi, se 
+	 * obtiene el objeto Beca correspondiente en el array becas y se comprueba si hay algún solapamiento en las fechas 
+	 * entre becaProv y becaInd.
+	 * 
+	 * Si se encuentra solapamiento la variable comp se estable a false y se sale del bucle. Si no se encuentra ningún 
+	 * solapamiento se sigue interando. Finalmente, el método retorna el valor de comp.
+	 * 
 	 * @param becaProv the provisional
 	 * @param x the x
 	 * @param level the level
@@ -107,7 +131,22 @@ public class Metodos {
 
 	/**
 	 * Checks if is best.
-	 *
+	 * El objetivo de este método es la mejor beca que puede optar.
+	 * 
+	 * Para ello vamos a crear un método estático esMejor de tipo booleano, en el cual le vamos a pasar tres arrays, el primero 
+	 * es un array x de tipo entero, el segundo es un array solucion de tipo entero y por último un array becas de tipo Beca.  
+	 * 
+	 * Dentro del método vamos a crear variables sx y ss de tipo entero inicializado a 0, creamos un bucle for con el cual vamos 
+	 * a recorrer el array x, dentro creamos otro bucle de tipo if en el en cual vamos a comparar las posiciones del array x con 
+	 * 1, es decir, si la posicion que actualmente se esta comparando  es igual a 1 se almacena en sx y le sumamos lo que tiene + 
+	 * lo que hay en el array becas en esas posiciones y cerramos el bucle if.
+	 * 
+	 * Abrimos el bucle if en el en cual vamos a comparar las posiciones del array soluciones con 1, es decir, si la posicion que
+	 * actualmente se esta comparando  es igual a 1 se almacena en ss y le sumamos lo que tiene +  lo que hay en el array becas en
+	 * esas posiciones y cerramos el bucle if.
+	 * 
+	 * Finalmente el método retorna el valor de sx > ss.
+	 * 
 	 * @param x the x
 	 * @param solucion the solution
 	 * @param becas the fellowships
