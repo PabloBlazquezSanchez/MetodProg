@@ -6,7 +6,8 @@ import java.io.FileReader;
 import java.io.IOException;
 
 /**
- * The Class España2.
+ * Esta clase contiene los métodos necesarios para la implementación del algoritmo de backtracking que nos permita 
+ * resolver el problema. 
  */
 public class Metodos {
 
@@ -22,7 +23,7 @@ public class Metodos {
 	 * 
 	 * Y para finalizar el método retornamos el array solucion.
 	 * 
-	 * @return the int[]
+	 * @return devolvos el array int [] solucion
 	 */
 	public static int[] mejorSolucion() {
 		Beca becas[] = leerFichero();
@@ -32,12 +33,11 @@ public class Metodos {
 	}
 
 	/**
-	 * Selection.
 	 *
-	 * @param x the x
-	 * @param solucion the solucion
-	 * @param level the level
-	 * @param becas the becas
+	 * @param x de x
+	 * @param solucion de solucion
+	 * @param nivel de nivel
+	 * @param becas de becas
 	 */
 	public static void seleccion(int[] x, int[] solucion, int level, Beca[] becas) {
 		if (level == becas.length) {
@@ -59,7 +59,7 @@ public class Metodos {
 	/**
 	 * Leer fichero.
 	 *
-	 * @return the beca[]
+	 * @return el array beca[]
 	 */
 	public static Beca[] leerFichero() {
 		String fichero = "Fellowships3400.dat";
@@ -93,7 +93,6 @@ public class Metodos {
 	}
 
 	/**
-	 * Checks if is compatible.
 	 * 
 	 * El objetivo de este método es saber si becaProv es compatible con las becas que se encuentran en el array becas.
 	 * 
@@ -110,11 +109,11 @@ public class Metodos {
 	 * Si se encuentra solapamiento la variable comp se estable a false y se sale del bucle. Si no se encuentra ningún 
 	 * solapamiento se sigue interando. Finalmente, el método retorna el valor de comp.
 	 * 
-	 * @param becaProv the provisional
-	 * @param x the x
-	 * @param level the level
-	 * @param becas the fellowships
-	 * @return true, if is compatible
+	 * @param becaProv de beca provisional
+	 * @param x de x
+	 * @param nivel de nivel
+	 * @param becas de  ficehro fellowships
+	 * @return verdadero, si es compatible
 	 */
 	public static boolean esCompatible(Beca becaProv, int[] x, int level, Beca[] becas) {
 		boolean comp = true;
@@ -130,7 +129,6 @@ public class Metodos {
 	}
 
 	/**
-	 * Checks if is best.
 	 * El objetivo de este método es la mejor beca que puede optar.
 	 * 
 	 * Para ello vamos a crear un método estático esMejor de tipo booleano, en el cual le vamos a pasar tres arrays, el primero 
@@ -147,10 +145,10 @@ public class Metodos {
 	 * 
 	 * Finalmente el método retorna el valor de sx > ss.
 	 * 
-	 * @param x the x
-	 * @param solucion the solution
-	 * @param becas the fellowships
-	 * @return true, if is best
+	 * @param x de x
+	 * @param solucion de solucion
+	 * @param becas de fellowships
+	 * @return verdadero, si es mejor
 	 */
 	public static boolean esMejor(int[] x, int[] solucion, Beca[] becas) {
 		int sx = 0, ss = 0;
