@@ -50,7 +50,7 @@ public class Beca {
 	 * Modifica el valor de la variable fInicio guardada en el objeto de tipo Beca.
 	 * 
 	 *
-	 * @param fecha de inicio la nueva fecha de inicio
+	 * @param fInicio Fecha de inicio la nueva fecha de inicio
 	 */
 	public void setfInicio(int fInicio) {
 		this.fInicio = fInicio;
@@ -71,7 +71,7 @@ public class Beca {
 	 * Modifica el valor de la variable fFin guardada en el objeto de tipo Beca.
 	 * 
 	 *
-	 * @param fecha de fin la nueva fecha de fin
+	 * @param fFin Nueva fecha de fin de la beca
 	 */
 	public void setfFin(int fFin) {
 		this.fFin = fFin;

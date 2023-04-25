@@ -37,7 +37,7 @@ public class Metodos {
 	 *
 	 * @param x        de x
 	 * @param solucion de solucion
-	 * @param nivel    de nivel
+	 * @param level    de nivel
 	 * @param becas    de becas
 	 */
 	public static void seleccion(int[] x, int[] solucion, int level, Beca[] becas) {
@@ -119,7 +119,7 @@ public class Metodos {
 	 * 
 	 * @param becaProv Beca a la que se está evaluando si es compatible
 	 * @param x        Solución provisional al problema
-	 * @param nivel    Indica el nivel de profundidad del arbol de Backtracking
+	 * @param level    Indica el nivel de profundidad del arbol de Backtracking
 	 * @param becas    Array con las becas almacenadas en el archivo .dat
 	 * @return verdadero Si la solución nueva es compatible
 	 */
