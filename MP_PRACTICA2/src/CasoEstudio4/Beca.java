@@ -1,7 +1,7 @@
 package CasoEstudio4;
 
 /**
- * Clase Beca
+ * Esta es la clase donde se implementa un objeto Beca
  */
 public class Beca {
 
@@ -18,14 +18,10 @@ public class Beca {
 	private int id;
 
 	/**
-	 * Instantiates a new beca.
 	 * 
 	 * Este método sirve para crear un objeto de tipo Beca que contenga un id, una
 	 * fecha de inicio, una fecha de finalización y el dinero que porporciona.
 	 * 
-	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la
-	 *         Cruz, Andrea Ordoño Peña
-	 * @version 1.0
 	 *
 	 * @param id      el id
 	 * @param fInicio la fecha de inicio
@@ -43,11 +39,8 @@ public class Beca {
 	 * Este método devuelve el valor almacenado en la variable fInicio, almacenado a
 	 * su vez en el objeto Beca.
 	 * 
-	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la
-	 *         Cruz, Andrea Ordoño Peña
-	 * @version 1.0
 	 *
-	 * @return the f inicio
+	 * @return la fecha de inicio
 	 */
 	public int getfInicio() {
 		return fInicio;
@@ -56,11 +49,8 @@ public class Beca {
 	/**
 	 * Modifica el valor de la variable fInicio guardada en el objeto de tipo Beca.
 	 * 
-	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la
-	 *         Cruz, Andrea Ordoño Peña
-	 * @version 1.0
 	 *
-	 * @param fInicio the new f inicio
+	 * @param fecha de inicio la nueva fecha de inicio
 	 */
 	public void setfInicio(int fInicio) {
 		this.fInicio = fInicio;
@@ -70,11 +60,8 @@ public class Beca {
 	 * Este método devuelve el valor almacenado en la variable fFin, almacenado a su
 	 * vez en el objeto Beca.
 	 * 
-	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la
-	 *         Cruz, Andrea Ordoño Peña
-	 * @version 1.0
 	 *
-	 * @return the f fin
+	 * @return la fecha de fin
 	 */
 	public int getfFin() {
 		return fFin;
@@ -83,11 +70,8 @@ public class Beca {
 	/**
 	 * Modifica el valor de la variable fFin guardada en el objeto de tipo Beca.
 	 * 
-	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la
-	 *         Cruz, Andrea Ordoño Peña
-	 * @version 1.0
 	 *
-	 * @param fFin the new f fin
+	 * @param fecha de fin la nueva fecha de fin
 	 */
 	public void setfFin(int fFin) {
 		this.fFin = fFin;
@@ -97,11 +81,8 @@ public class Beca {
 	 * Este método devuelve el valor almacenado en la variable dinero, almacenado a
 	 * su vez en el objeto Beca.
 	 * 
-	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la
-	 *         Cruz, Andrea Ordoño Peña
-	 * @version 1.0
 	 *
-	 * @return the dinero
+	 * @return el dinero
 	 */
 	public int getDinero() {
 		return dinero;
@@ -110,11 +91,8 @@ public class Beca {
 	/**
 	 * Modifica el valor de la variable dinero guardada en el objeto de tipo Beca.
 	 * 
-	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la
-	 *         Cruz, Andrea Ordoño Peña
-	 * @version 1.0
 	 *
-	 * @param dinero the new dinero
+	 * @param dinero el nuevo dinero
 	 */
 	public void setDinero(int dinero) {
 		this.dinero = dinero;
@@ -124,11 +102,8 @@ public class Beca {
 	 * Este método devuelve el valor almacenado en la variable id, almacenado a su
 	 * vez en el objeto Beca.
 	 * 
-	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la
-	 *         Cruz, Andrea Ordoño Peña
-	 * @version 1.0
 	 *
-	 * @return the id
+	 * @return el id
 	 */
 	public int getId() {
 		return id;
@@ -137,11 +112,8 @@ public class Beca {
 	/**
 	 * Modifica el valor de la variable id guardada en el objeto de tipo Beca.
 	 * 
-	 * @author Pablo Blázquez Sánchez, Jesús Fernández López, Raúl Jiménez de la
-	 *         Cruz, Andrea Ordoño Peña
-	 * @version 1.0
 	 *
-	 * @param id the new id
+	 * @param id el nuevo id
 	 */
 	public void setId(int id) {
 		this.id = id;
