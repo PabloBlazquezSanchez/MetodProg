@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="dc.created" content="2023-04-27">
-<meta name="description" content="declaration: package: CasoEstudio4, class: Main">
+<meta name="description" content="declaration: package: CasoEstudio3Hito, class: Main">
 <meta name="generator" content="javadoc/ClassWriterImpl">
 <link rel="stylesheet" type="text/css" href="../stylesheet.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../script-dir/jquery-ui.min.css" title="Style">
@@ -69,22 +69,22 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">CasoEstudio4</a></div>
+<div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">CasoEstudio3Hito</a></div>
 <h1 title="Class Main" class="title">Class Main</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
-<div class="inheritance">CasoEstudio4.Main</div>
+<div class="inheritance">CasoEstudio3Hito.Main</div>
 </div>
 <section class="class-description" id="class-description">
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Main</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">Es la clase principal del programa encargada de interactuar con el usuario,
- es decir, en este caso vamos a mostrar la mejor opción de becas a solicitar
- durante un curso. Para ello vamos a usar los métodos mejorSolucion y el
- método LeerFichero y la imprime en la consola. En caso de que no sea posible
- mostrar la mejor opción de becas, la clase principal mostrará un mensaje de
- que no hay una opción adecuada con los criterios establecidos.</div>
+ es decir, de pedirle los detalles del solar y el número de baldosas distintas
+ que se van a utilizar junto con sus dimensiones. Luego, utiliza el algoritmo
+ correspondiente para encontrar la solución y la imprime en la consola. En
+ caso de que no sea posible encontrar una solución, la clase principal
+ mostrará un mensaje de error.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -112,11 +112,17 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#main(java.lang.String%5B%5D)" class="member-name-link">main</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;args)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#comprobacion(int%5B%5D%5B%5D)" class="member-name-link">comprobacion</a><wbr>(int[][]&nbsp;matrizResultado)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Este método se encarga de comprobar si la solución encontrada para la
+ colocación de las baldosas en el solar es válida o no.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#main(java.lang.String%5B%5D)" class="member-name-link">main</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;args)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Este es el método principal de la clase donde se realiza la interacción con
- el usuario.</div>
+ el usuario para pedirle los detalles del solar y las baldosas a utilizar.</div>
 </div>
 </div>
 </div>
@@ -154,29 +160,44 @@ loadScripts(document, 'script');</script>
 <h3>main</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">main</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;args)</span></div>
 <div class="block">Este es el método principal de la clase donde se realiza la interacción con
- el usuario. En el método main, creamos un array bec y otro array de tipo Beca
- llamado becas.
- 
- A bec le pasamos el método de mejor solución de la clase Metodos y a becas el
- método de Leerfichero de la clase Metodos que contine todos los datos a usar.
- Inicializamos la variable totalDinero de tipo entero en el cual vamos
- almacenar el dinero total.
- 
- Creamos un bucle if que va a tener el if y el else; en el if si la longitud
- de bec es distinto de 0 vamos a imprimir un mensaje que diga la selección de
- las becas, y crear un bucle for interno en el cual, vamos a recorrer el array
- bec y añadimos otro bucle if interno que si cada posicion es igual a 1
- entonces, a totalDinero le sumamos lo que tiene + el contenido del array
- becas en esa posicion el dinero y lo imprimos cerramos todos los bucles
- excepto el primer if y ahí se imprime el dinero total que hemos obtenido con
- esto acabaríamos la primera opción.
- 
- En el else del primer if que tenemos, si es igual 0 en ese caso solo
- imprimiremos un mensaje que diga que no se ha considerado seleccionar ninguna
- beca que se encuentra ofertada.</div>
+ el usuario para pedirle los detalles del solar y las baldosas a utilizar. En
+ primer lugar, se pide al usuario el tamaño del solar mediante la función
+ filtrarNumero() de la clase Metodos. Luego, se pide el número de baldosas
+ distintas y sus dimensiones mediante un bucle for que solicita el tamaño de
+ cada tipo de baldosa. Después de que el usuario haya introducido todos los
+ datos, se muestran un resumen de los datos introducidos y se ordena el array
+ de tamaños de baldosas de menor a mayor mediante la función ordenarArray() de
+ la clase Metodos. Finalmente, se resuelve la colocación de las baldosas en el
+ solar mediante la función resolverColocacion() de la clase Metodos, y se
+ comprueba si la solución es válida mediante la función comprobacion(). Si la
+ solución es válida, se imprime en consola mediante la función
+ imprimirResultado(). En caso de que no se pueda encontrar una solución, no se
+ imprimirá nada en consola. Se utiliza Metodos.lectura.close() para cerrar el
+ objeto de lectura de datos en la clase Metodos después de haberlo utilizado.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>args</code> - Argumentos del programa</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="comprobacion(int[][])">
+<h3>comprobacion</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">comprobacion</span><wbr><span class="parameters">(int[][]&nbsp;matrizResultado)</span></div>
+<div class="block">Este método se encarga de comprobar si la solución encontrada para la
+ colocación de las baldosas en el solar es válida o no. Para ello, recorre la
+ matrizResultado mediante dos bucles for. Si en algún momento encuentra una
+ celda con valor 0, significa que no se ha logrado colocar todas las baldosas
+ en el solar y la solución no es válida. En este caso, se muestra un mensaje
+ de error en la consola indicando que no se ha completado el solar y se
+ establece la variable correcto a false.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>matrizResultado</code> - Matriz bidimensional con la solución dada por el
+                        algoritmo</dd>
+<dt>Returns:</dt>
+<dd>true - Si todos los elementos de la matriz tienen un valor distinto
+         de 0</dd>
 </dl>
 </section>
 </li>
