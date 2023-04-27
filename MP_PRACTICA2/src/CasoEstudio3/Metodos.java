@@ -107,16 +107,57 @@ public class Metodos {
 	 * 
 	 * --COMPLEJIDAD--
 	 * 
-	 * La complejidad de este algoritmo depende principalmente del lado del solar,
-	 * sin despreciar los diferentes tamaños de baldosa que se introduzcan. Por
-	 * ello, empleando notación Big-Theta, el algoritmo posee una complejidad de
-	 * O(n^2).
+	 * La complejidad del algoritmo voraz es de la forma: O(algorithm) =
+	 * O(preprocesado) + O(m_bucle_principal)·O(solución)
+	 * 
+	 * La complejidad del preprocesado es la de la ordenación en orden decreciente
+	 * del array del tamaño de baldosas. Como comentamos en el caso de estudio 2,
+	 * esta es de O(n·logn).
+	 * 
+	 * Sin embargo, para determinar la del bucle principal y selección de la
+	 * solución, debemos considerar las diferentes entradas a nuestro programa para
+	 * poder entender cuánto puede aumentar su tiempo de ejecución:
+	 * 
+	 * 1. El lado del solar. Principalmente el algoritmo se encarga de rellenar con
+	 * baldosas un solar cuadrado de lado n, lo que implica bucles anidados de n
+	 * iteraciones cada uno. 2. La longitud del array de los tipos de baldosa, m.
+	 * Cuando va recorriendo el solar, nuestro algoritmo va comprobando si la
+	 * baldosa cabe en la coordenada ij. Cuando no sucede esto, se cambia el tipo de
+	 * baldosa a uno de tamaño menor. Entonces, a más tipos de baldosa, más veces se
+	 * tendrá que comprobarse si entra, y en caso afirmativo (peor caso), colocarla.
+	 * 3. El tamaño t de baldosa. Cuando comprobamos de manera iterativa si en un
+	 * determinado espacio cabe una baldosa o cuando la estamos colocando, se
+	 * emplean dos bucles para ir comprobando coordenada a coordenada. Estos bucles
+	 * dependen de los dos primeros, pues marcan la posición de inicio para poder
+	 * iterar sobre el solar, y el número de iteraciones que hacen depende del lado
+	 * de la baldosa que se está empleando.
+	 * 
+	 * Como nuestro peor caso es: "Recorrer el suelo -> ¿Cabe la baldosa? -> SÍ ->
+	 * Coloco la baldosa (Y en algún momento hay que cambiar de baldosa y repetir
+	 * los dos últimos sucesos)", tenemos en total 6 sumatorios, 4 de ellos
+	 * influenciados por nuestra longitud m:
+	 * 
+	 * Sumatorio{i=0 hasta n-1}de(Sumatorio{j=0 hasta n-1}de(m*[Sumatorio{f=i hasta
+	 * i+t-1}de(Sumatorio{c=j hasta j+t-1}de(Sumatorio{g=i hasta
+	 * i+t-1}de(Sumatorio{k=j hasta j+t-1}de(1))))])), considerando como constante =
+	 * 1 la operación básica.
+	 * 
+	 * Desenvolviendo todos los sumatorios nos resulta en t^4*n^2*m (mayor a nlogn,
+	 * lo despreciaremos). Sin embargo, hay que puntualizar un último detalle: el
+	 * tamaño de la baldosa t lo vamos a despreciar para nuestra complejidad en
+	 * Big-Theta ya que, principalmente, aunque verifiquemos y coloquemos la baldosa
+	 * en el solar, el bucle principal va a seguir recorriendo todo el solar
+	 * (nuestro peor caso), independientemente del número del tamaño de baldosa que
+	 * se encuentre en cada coordenada del suelo.
+	 * 
+	 * Finalmente, concretamos que la complejidad del algoritmo en notación
+	 * Big-Theta es de O(n^2m)
 	 *
-	 * @param tamSolar the tam solar
+	 * @param tamSolar el lado del solar
 	 * 
-	 * @param tamBaldosas the tam baldosas
+	 * @param tamBaldosas Array de los diferentes tipos de baldosas
 	 * 
-	 * @return the int[][]
+	 * @return Matriz del suelo del solar resuelto int[][]
 	 */
 	public static int[][] resolverColocacion(int tamSolar, int[] tamBaldosas) {
 		int size = tamSolar;
