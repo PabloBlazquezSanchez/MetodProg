@@ -22,6 +22,10 @@ public class Beca {
 	 * Este método sirve para crear un objeto de tipo Beca que contenga un id, una
 	 * fecha de inicio, una fecha de finalización y el dinero que porporciona.
 	 * 
+	 * Nótese que al inicializar el objeto beca, establecemos como cuantía final la
+	 * obtenida en todos los meses en lugar de la cuantía al mes. Le añadimos una
+	 * unidad a la diferencia del último mes menos el primero ya que es la duración
+	 * desde el primer día del primer mes hasta el último día del último.
 	 *
 	 * @param id      el id
 	 * @param fInicio la fecha de inicio
@@ -31,7 +35,7 @@ public class Beca {
 	public Beca(int id, int fInicio, int fFin, int dinero) {
 		this.fInicio = fInicio;
 		this.fFin = fFin;
-		this.dinero = (fFin-fInicio+1)*dinero;
+		this.dinero = (fFin - fInicio + 1) * dinero;
 		this.id = id;
 	}
 
