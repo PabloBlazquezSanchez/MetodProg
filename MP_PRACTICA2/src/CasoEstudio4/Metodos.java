@@ -20,8 +20,8 @@ public class Metodos {
 	 * entero el cual esta inicializado con la longitud del array becas.
 	 * 
 	 * Llamamos al método de selección al cuál le pasamos la longitud del array, el
-	 * array solucion, el nivel y el array becas.Para finalizar el método retornamos
-	 * el array solucion.
+	 * array solucion, el nivel (inicialmente en 0) y el array becas. Para finalizar
+	 * el método retornamos el array solucion.
 	 * 
 	 * @return solucion Array de unos y ceros que representan la solución al
 	 *         problema
@@ -34,21 +34,54 @@ public class Metodos {
 	}
 
 	/**
-	 *
-	 * @param x        de x
-	 * @param solucion de solucion
-	 * @param level    de nivel
-	 * @param becas    de becas
+	 * Seleccion.
+	 * 
+	 * El siguiente algoritmo es el principal motor del programa, el algoritmo de
+	 * tipo Back-tracking. Consiste en que iremos recorriendo nuestro "árbol
+	 * virtual" de becas para obtener la mejor combinación, probando (y desechando)
+	 * de por medio numerosas soluciones parciales.
+	 * 
+	 * Este algoritmo se divide en dos partes, en el caso base o posible
+	 * finalización y en el caso recursivo de Back-tracking.
+	 * 
+	 * En la primera parte verificamos si nuestra variable entera iteradura level ha
+	 * llegado al final del sistema de becas (equivale a longitud del array de
+	 * estas). Si es así, procedemos a comparar la solución parcial con la actual
+	 * que es actualmente óptima (que se puede desechar, ver método esMejor()). Si
+	 * la solución x resulta ser más óptima, se reemplazará a la solución
+	 * persistente.
+	 * 
+	 * Si alguna de estas dos condiciones no se cumple, es cuando pasamos a volver
+	 * hacia atrás. Nuestra condición de viabilidad ("feasibility condition") es
+	 * verificar si un nodo beca es compatible con las demás (ver esCompatible()).
+	 * Si es compatible, la incluimos en nuestra solución temporal X con un 1, a
+	 * través del iterador level, que nos ayuda a determinar la posición exacta de
+	 * la beca, y llamamos recursivamente al método para repetir lo anterior y
+	 * seguir con la búsqueda ideal de becas. Cuando acabe dicha ejecución recursiva
+	 * (o cuando no es compatible), descartamos la beca, estableciendo un 0.
+	 * Posteriormente, llamamos al método recursivo para que se puedan seguir
+	 * buscando otras becas más óptimas.
+	 * 
+	 * La ejecución termina cuando se ha alcanzado y aprobado la condición de
+	 * finalización, como hemos comentado anteriormente. Por lo que quedará
+	 * determinado el array de enteros (unos y ceros) de la solución, para poder
+	 * interpretarlo y representar más adelante las becas a elegir por pantalla.
+	 * 
+	 * @param x        Solución temporal
+	 * @param solucion Solución final del problema
+	 * @param level    Nivel o iterador de becas
+	 * @param becas    Array de objetos de tipo beca, donde se hallan todas las
+	 *                 becas (del .dat)
 	 */
 	public static void seleccion(int[] x, int[] solucion, int level, Beca[] becas) {
-		if (level == becas.length) {
-			if (esMejor(x, solucion, becas)) { // Caso base
+		if (level == becas.length) { // Máximo nivel alcanzado
+			if (esMejor(x, solucion, becas)) { // Caso base o test de finalización
 				for (int i = 0; i < solucion.length; i++) {
 					solucion[i] = x[i];
 				}
 			}
-		} else {
-			if (esCompatible(becas[level], x, level, becas)) {
+		} else { // Backtracking
+			if (esCompatible(becas[level], x, level, becas)) { // Condición de viabilidad (Solución parcial?)
 				x[level] = 1; // Incluye la beca
 				seleccion(x, solucion, level + 1, becas);
 			}
@@ -59,8 +92,19 @@ public class Metodos {
 
 	/**
 	 * Leer fichero.
-	 *
-	 * @return el array beca[]
+	 * 
+	 * El siguiente método tiene como función transformar la información contenida
+	 * en el ficher de becas al array de becas que se utilizará para nuestro
+	 * algoritmo de Backtracking. Para ello, vamos a controlar tres excepciones: que
+	 * el fichero se encuentre dentro del proyecto, que no existan errores de
+	 * entrada/salida y que el formato numérico sea válido.
+	 * 
+	 * A través de la función split, vamos a ir rellenando cada atributo numérico de
+	 * una beca (con parseInt). Cada columna implica (del 0 al 3) el número de beca,
+	 * mes de inicio, mes de finalización y cuantía. Una vez tenemos los atributos,
+	 * generamos objeto beca y lo añadimos al array de becas.
+	 * 
+	 * @return el array de becas beca[]
 	 */
 	public static Beca[] leerFichero() {
 		String fichero = "Fellowships3400.dat";
@@ -137,7 +181,8 @@ public class Metodos {
 	}
 
 	/**
-	 * El objetivo de este método es la mejor beca que puede optar.
+	 * El objetivo de este método es determinar cuál es la mejor beca a la que se
+	 * puede optar.
 	 * 
 	 * Para ello vamos a crear un método estático esMejor de tipo booleano, en el
 	 * cual le vamos a pasar tres arrays, el primero es un array x de tipo entero,

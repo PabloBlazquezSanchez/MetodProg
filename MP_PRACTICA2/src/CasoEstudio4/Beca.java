@@ -31,7 +31,7 @@ public class Beca {
 	public Beca(int id, int fInicio, int fFin, int dinero) {
 		this.fInicio = fInicio;
 		this.fFin = fFin;
-		this.dinero = dinero;
+		this.dinero = (fFin-fInicio+1)*dinero;
 		this.id = id;
 	}
 
