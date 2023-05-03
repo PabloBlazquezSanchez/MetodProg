@@ -92,8 +92,10 @@ public class Metodos {
 	 * Su tamaño será el lado del solar en x e y (tamSolar^2)<br>
 	 * 
 	 * Una vez se han inicializado las variables anteriores, el algoritmo recorrerá
-	 * el suelo del solar, usando dos bucles for. Mientras que la coordenada ij del
-	 * solar no esté ocupada (representada con un 0) y la baldosa actual
+	 * el suelo del solar, usando dos bucles for. Nótese que el algoritmo reinicia 
+	 * la baldosa elegida (iterador posicion y variable tamano) para garantizar que 
+	 * siempre que sea posible se emplee la baldosa de tamaño superior. Mientras que la 
+	 * coordenada ij del solar no esté ocupada (representada con un 0) y la baldosa actual
 	 * seleccionada esté dentro del array del tamaño de las baldosas, redefinimos el
 	 * tamaño de la baldosa. Esto lo hacemos para comprobar en este momento si la
 	 * baldosa cabe en la posición actual del solar (ver método cabeBaldosa).<br>
