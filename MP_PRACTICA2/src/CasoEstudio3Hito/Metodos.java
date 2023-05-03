@@ -172,6 +172,7 @@ public class Metodos {
 		int floor[][] = new int[tamSolar][tamSolar];
 		int f = -1, c = -1;
 		for (int i = 0; i < size; i++) {
+			actual=0;
 			for (int j = 0; j < size; j++) {
 				while (floor[i][j] == 0 && actual <= tamBaldosas.length - 1) {
 					tamano = tamBaldosas[actual];

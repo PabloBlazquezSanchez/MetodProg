@@ -109,7 +109,7 @@ public class Main {
 	}
 
 	public static void imprimirCoord(int f, int c, int tamano) {
-System.out.println(f+" "+c+" "+tamano);		
+System.out.println("Fila: "+f+"    Columna:"+c+"    Tamaño de baldosa:"+tamano);		
 	}
 
 }
