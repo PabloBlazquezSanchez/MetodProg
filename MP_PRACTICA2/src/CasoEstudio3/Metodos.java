@@ -51,6 +51,7 @@ public class Metodos {
 		} catch (InputMismatchException ime) { // Detecta si el dato introducido no es un número y lanza un mensaje de
 												// error
 			System.out.println("Sólo puede escribir números. Inténtelo de nuevo: ");
+			lectura.next();
 			numero = filtrarNumero(); // Vuelve a solicitar el dato
 		}
 		return numero;
