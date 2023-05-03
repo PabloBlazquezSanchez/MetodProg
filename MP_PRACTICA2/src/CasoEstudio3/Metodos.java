@@ -92,10 +92,11 @@ public class Metodos {
 	 * Su tamaño será el lado del solar en x e y (tamSolar^2)<br>
 	 * 
 	 * Una vez se han inicializado las variables anteriores, el algoritmo recorrerá
-	 * el suelo del solar, usando dos bucles for. Nótese que el algoritmo reinicia 
-	 * la baldosa elegida (iterador posicion y variable tamano) para garantizar que 
-	 * siempre que sea posible se emplee la baldosa de tamaño superior. Mientras que la 
-	 * coordenada ij del solar no esté ocupada (representada con un 0) y la baldosa actual
+	 * el suelo del solar, usando dos bucles for. Nótese que el algoritmo reinicia
+	 * la baldosa elegida (iterador posicion y variable tamano) para garantizar que
+	 * siempre que sea posible se emplee la baldosa de tamaño superior. Esto se
+	 * efectúa cada vez que aaavanzamos una fila i. Mientras que la coordenada ij
+	 * del solar no esté ocupada (representada con un 0) y la baldosa actual
 	 * seleccionada esté dentro del array del tamaño de las baldosas, redefinimos el
 	 * tamaño de la baldosa. Esto lo hacemos para comprobar en este momento si la
 	 * baldosa cabe en la posición actual del solar (ver método cabeBaldosa).<br>
@@ -106,7 +107,8 @@ public class Metodos {
 	 * correspondiente, empezando desde las coordenadas determinadas por i y j (fila
 	 * y columna). Si no cabe, pasamos a un tamaño de baldosa menor, representado
 	 * como un aumento de la posición actual del array de baldosas. Esté método
-	 * cuando finalice devolverá la matriz solución.<br><br>
+	 * cuando finalice devolverá la matriz solución.<br>
+	 * <br>
 	 * 
 	 * --COMPLEJIDAD--<br>
 	 * <br>
@@ -119,26 +121,30 @@ public class Metodos {
 	 * 
 	 * Sin embargo, para determinar la del bucle principal y selección de la
 	 * solución, debemos considerar las diferentes entradas a nuestro programa para
-	 * poder entender cuánto puede aumentar su tiempo de ejecución:<br><br>
+	 * poder entender cuánto puede aumentar su tiempo de ejecución:<br>
+	 * <br>
 	 * 
 	 * 1. El lado del solar. Principalmente el algoritmo se encarga de rellenar con
 	 * baldosas un solar cuadrado de lado n, lo que implica bucles anidados de n
-	 * iteraciones cada uno. <br>2. La longitud del array de los tipos de baldosa, m.
-	 * Cuando va recorriendo el solar, nuestro algoritmo va comprobando si la
-	 * baldosa cabe en la coordenada ij. Cuando no sucede esto, se cambia el tipo de
-	 * baldosa a uno de tamaño menor. Entonces, a más tipos de baldosa, más veces se
-	 * tendrá que comprobarse si entra, y en caso afirmativo (peor caso), colocarla.
-	 * <br>3. El tamaño t de baldosa. Cuando comprobamos de manera iterativa si en un
+	 * iteraciones cada uno. <br>
+	 * 2. La longitud del array de los tipos de baldosa, m. Cuando va recorriendo el
+	 * solar, nuestro algoritmo va comprobando si la baldosa cabe en la coordenada
+	 * ij. Cuando no sucede esto, se cambia el tipo de baldosa a uno de tamaño
+	 * menor. Entonces, a más tipos de baldosa, más veces se tendrá que comprobarse
+	 * si entra, y en caso afirmativo (peor caso), colocarla. <br>
+	 * 3. El tamaño t de baldosa. Cuando comprobamos de manera iterativa si en un
 	 * determinado espacio cabe una baldosa o cuando la estamos colocando, se
 	 * emplean dos bucles para ir comprobando coordenada a coordenada. Estos bucles
 	 * dependen de los dos primeros, pues marcan la posición de inicio para poder
 	 * iterar sobre el solar, y el número de iteraciones que hacen depende del lado
-	 * de la baldosa que se está empleando.<br><br>
+	 * de la baldosa que se está empleando.<br>
+	 * <br>
 	 * 
 	 * Como nuestro peor caso es: "Recorrer el suelo -> ¿Cabe la baldosa? -> SÍ ->
 	 * Coloco la baldosa (Y en algún momento hay que cambiar de baldosa y repetir
 	 * los dos últimos sucesos)", tenemos en total 6 sumatorios, 4 de ellos
-	 * influenciados por nuestra longitud m:<br><br>
+	 * influenciados por nuestra longitud m:<br>
+	 * <br>
 	 * 
 	 * Sumatorio{i=0 hasta n-1}de(Sumatorio{j=0 hasta n-1}de(m*[Sumatorio{f=i hasta
 	 * i+t-1}de(Sumatorio{c=j hasta j+t-1}de(Sumatorio{g=i hasta
@@ -156,7 +162,7 @@ public class Metodos {
 	 * Finalmente, concretamos que la complejidad del algoritmo en notación
 	 * Big-Theta es de O(n^2m)
 	 *
-	 * @param tamSolar el lado del solar
+	 * @param tamSolar    el lado del solar
 	 * 
 	 * @param tamBaldosas Array de los diferentes tipos de baldosas
 	 * 
@@ -169,7 +175,7 @@ public class Metodos {
 		int floor[][] = new int[tamSolar][tamSolar];
 
 		for (int i = 0; i < size; i++) {
-			actual=0;
+			actual = 0;
 			for (int j = 0; j < size; j++) {
 				while (floor[i][j] == 0 && actual <= tamBaldosas.length - 1) {
 					tamano = tamBaldosas[actual];
