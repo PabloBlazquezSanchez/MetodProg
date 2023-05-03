@@ -32,9 +32,16 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		System.out.println("Introduce el valor de N para cacular el tamaño del solar de dimensiones NxN:");
-		int tamSolar = 4;
+		int tamSolar = Metodos.filtrarNumero();
 		System.out.println("Introduce el número de baldosas diferentes: ");
-		int[] tamBaldosas = { 1, 2, 5 };
+		int[] tamBaldosas = new int[Metodos.filtrarNumero()];
+
+		System.out.println("Introduzca el tamaño de las baldosas:");
+		for (int i = 0; i < tamBaldosas.length; i++) {
+			System.out.println("Escribe el tamaño del tipo de baldosa " + (i + 1) + " de dimensiones NxN:");
+			tamBaldosas[i] = Metodos.filtrarNumero();
+		}
+		Metodos.lectura.close();
 
 		System.out.println("\n\nDATOS INTRODUCIDOS:");
 		System.out.println("Tamaño del solar: " + tamSolar + " x " + tamSolar);
@@ -63,8 +70,8 @@ public class Main {
 	 * 
 	 * @param matrizResultado Matriz bidimensional con la solución dada por el
 	 *                        algoritmo
-	 * @return true - Si todos los elementos de la matriz tienen un valor distinto
-	 *         de 0
+	 * @return true - Si todos los elementos de la matriz tienen un valor distinto de
+	 *         0
 	 */
 	public static boolean comprobacion(int[][] matrizResultado) {
 		boolean correcto = true;
@@ -93,19 +100,16 @@ public class Main {
 	 *                        algoritmo
 	 */
 	private static void imprimirResultado(int[][] resultadoMatriz) {
-		boolean lock = true;
 		for (int i = 0; i < resultadoMatriz.length; i++) {
 			for (int j = 0; j < resultadoMatriz[i].length; j++) {
-				if (lock) {
-					System.out.print(resultadoMatriz[i][j] + " ");
-					lock = false;
-				} else {
-					System.out.print("x ");
-
-				}
+				System.out.print(resultadoMatriz[i][j] + " ");
 			}
 			System.out.println();
 		}
+	}
+
+	public static void imprimirCoord(int f, int c, int tamano) {
+System.out.println(f+" "+c+" "+tamano);		
 	}
 
 }
