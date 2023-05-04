@@ -119,7 +119,7 @@ public class Main {
 	 */
 	public static void imprimirCoord(int ci, int c, int tamano) {
 		System.out.println(
-				"Coordenadas de la última baldosa:(" + ci + "," + ci + ") (" + c + "," + c + ") de tamaño " + tamano);
+				"Coordenadas de la última baldosa:(" + ci + "," + ci + "),(" + c + "," + c + ") de tamaño " + tamano);
 	}
 
 }
