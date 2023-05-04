@@ -70,8 +70,8 @@ public class Main {
 	 * 
 	 * @param matrizResultado Matriz bidimensional con la solución dada por el
 	 *                        algoritmo
-	 * @return true - Si todos los elementos de la matriz tienen un valor distinto de
-	 *         0
+	 * @return true - Si todos los elementos de la matriz tienen un valor distinto
+	 *         de 0
 	 */
 	public static boolean comprobacion(int[][] matrizResultado) {
 		boolean correcto = true;
@@ -108,8 +108,9 @@ public class Main {
 		}
 	}
 
-	public static void imprimirCoord(int f, int c, int tamano) {
-System.out.println("Fila: "+f+"    Columna:"+c+"    Tamaño de baldosa:"+tamano);		
+	
+	public static void imprimirCoord(int ci, int c, int tamano) {
+		System.out.println("Coordenadas de la última baldosa:("  + ci + "," + ci+") (" + c + "," + c + ") de tamaño " + tamano);
 	}
 
 }

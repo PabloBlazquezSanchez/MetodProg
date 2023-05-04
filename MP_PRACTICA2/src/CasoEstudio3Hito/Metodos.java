@@ -169,18 +169,23 @@ public class Metodos {
 		int size = tamSolar;
 		int actual = 0;
 		int tamano = tamBaldosas[actual];
+		boolean check = true;
 		int floor[][] = new int[tamSolar][tamSolar];
-		int f = -1, c = -1;
+		int f = -1, c = -1, ci = -1;
 		for (int i = 0; i < size; i++) {
-			actual=0;
+			actual = 0;
 			for (int j = 0; j < size; j++) {
 				while (floor[i][j] == 0 && actual <= tamBaldosas.length - 1) {
 					tamano = tamBaldosas[actual];
 					if (cabeBaldosa(tamano, i, j, floor, size)) {
 						for (f = i; f < i + tamano; f++) {
+							check = true;
 							for (c = j; c < j + tamano; c++) {
+								if (check) {
+									ci = j;
+								}
 								floor[f][c] = tamano;
-
+								check = false;
 							}
 						}
 					} else {
@@ -190,7 +195,7 @@ public class Metodos {
 			}
 		}
 		if (f != -1 && c != -1) {
-Main.imprimirCoord(f,c,tamano);
+			Main.imprimirCoord(ci, c - 1, tamano);
 		}
 		return floor;
 	}
