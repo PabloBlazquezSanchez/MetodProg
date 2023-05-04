@@ -107,6 +107,11 @@ public class Metodos {
 	 * cuando finalice devolverá la matriz solución.<br>
 	 * <br>
 	 * 
+	 * Como las baldosas siempre son cuadrados, para representar la última baldosa
+	 * (y su tamaño), guardamos el tamaño, la columna inicial y la final, quitándole
+	 * una iteración dado al postincremento producto de la colocación de la propia
+	 * baldosa.
+	 * 
 	 * --COMPLEJIDAD--<br>
 	 * <br>
 	 * La complejidad del algoritmo voraz es de la forma: O(algorithm) =
@@ -169,7 +174,6 @@ public class Metodos {
 		int size = tamSolar;
 		int actual = 0;
 		int tamano = tamBaldosas[actual];
-		boolean check = true;
 		int floor[][] = new int[tamSolar][tamSolar];
 		int f = -1, c = -1, ci = -1;
 		for (int i = 0; i < size; i++) {
@@ -179,7 +183,7 @@ public class Metodos {
 					tamano = tamBaldosas[actual];
 					if (cabeBaldosa(tamano, i, j, floor, size)) {
 						for (f = i; f < i + tamano; f++) {
-							check = true;
+							boolean check = true;
 							for (c = j; c < j + tamano; c++) {
 								if (check) {
 									ci = j;

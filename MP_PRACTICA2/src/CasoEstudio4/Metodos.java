@@ -107,7 +107,7 @@ public class Metodos {
 	 * @return el array de becas beca[]
 	 */
 	public static Beca[] leerFichero() {
-		String fichero = "Fellowships3400.dat";
+		String fichero = "FellowshipsN.dat";
 		try (BufferedReader br = new BufferedReader(new FileReader(fichero))) {
 			int longitud = Integer.parseInt(br.readLine());
 			Beca becas[] = new Beca[longitud];
