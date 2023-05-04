@@ -108,9 +108,18 @@ public class Main {
 		}
 	}
 
-	
+	/**
+	 * A este método le vamos a pasar las variables de tipo entero ci, c y tamano,
+	 * en las cuales almacenamos las coordenadas de inicio y fin de la última
+	 * baldosa colocada junto con el tamaño de la misma.
+	 *
+	 * @param ci     coordenada de inicio de la baldosa
+	 * @param c      coordenada de fin de la baldosa
+	 * @param tamano tamaño de la baldosa
+	 */
 	public static void imprimirCoord(int ci, int c, int tamano) {
-		System.out.println("Coordenadas de la última baldosa:("  + ci + "," + ci+") (" + c + "," + c + ") de tamaño " + tamano);
+		System.out.println(
+				"Coordenadas de la última baldosa:(" + ci + "," + ci + ") (" + c + "," + c + ") de tamaño " + tamano);
 	}
 
 }
